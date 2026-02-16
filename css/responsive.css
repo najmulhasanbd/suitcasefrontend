@@ -1,0 +1,36 @@
+/*-----------------------------------------------------------------------------------
+    Responsive Breakpoints
+-----------------------------------------------------------------------------------*/
+
+/* 1. Extra Large Desktop (1200px to 1500px) */
+@media (min-width: 1200px) and (max-width: 1500px) {
+}
+
+/* 2. Standard Desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* 3. Tablet Device (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* 4. Large Mobile (480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 450px;
+    }
+}
+
+/* 5. Small Mobile (Up to 479px) */
+@media (max-width: 479px) {
+    
+    .container {
+        width: 100%; 
+        padding: 0 15px;
+    }
+}
+
+/* 6. All Mobile Devices (Default for Mobile) */
+@media (max-width: 767px) {
+    
+}
