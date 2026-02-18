@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body class="dark-mode-active">
+<body>
 
     <header>
         <section class="top-bar border-bottom  py-2">
@@ -67,8 +67,8 @@
             </div>
         </section>
 
-        <section class="middle-header  border-bottom  py-2">
-            <div class="container">
+        <section class="middle-header  border-bottom  py-2 ">
+            <div class="container d-none d-lg-block">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-3 col-6">
                         <div class="logo">
@@ -78,7 +78,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 d-none d-md-block">
+                    <div class="col-lg-6 col-md-6">
                         <form action="" method="post">
                             <div class="input-group">
                                 <input type="text" class="form-control"
@@ -110,28 +110,248 @@
                     </div>
                 </div>
             </div>
+            <div class="container d-lg-none">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <div class="mobile_menu" data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+                            aria-controls="mobileMenu">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                    <!-- mobile menu -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu"
+                        aria-labelledby="mobileMenuLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body p-0">
+                            <div class="mobile-nav-wrapper shadow-sm border rounded">
+                                <nav>
+                                    <div class="nav nav-tabs nav-fill bg-light" id="nav-tab" role="tablist">
+                                        <button class="nav-link active fw-bold py-3 text-uppercase"
+                                            id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category"
+                                            type="button" role="tab">
+                                            <i class="fa-solid fa-list-ul me-2"></i>Categories
+                                        </button>
+                                        <button class="nav-link fw-bold py-3 text-uppercase" id="nav-menu-tab"
+                                            data-bs-toggle="tab" data-bs-target="#nav-menu" type="button" role="tab">
+                                            <i class="fa-solid fa-bars me-2"></i>Menu
+                                        </button>
+                                    </div>
+                                </nav>
+
+                                <div class="tab-content bg-white" id="nav-tabContent">
+                                    <div class="tab-pane fade show active mobile-nav-wrapper" id="nav-category"
+                                        role="tabpanel">
+                                        <ul class="list-unstyled mb-0 category-list">
+
+                                            <li class="category-item border-bottom">
+                                                <div class="category-header d-flex justify-content-between align-items-center p-3"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-travel-1"
+                                                    aria-expanded="false" style="cursor: pointer;">
+                                                    <span class="d-flex align-items-center fw-medium">
+                                                        <i
+                                                            class="fa-solid fa-person-walking-luggage me-3 text-danger fs-5"></i>
+                                                        Travel Bags
+                                                    </span>
+                                                    <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                                                </div>
+
+                                                <div class="collapse" id="sub-travel-1" data-bs-parent="#nav-category">
+                                                    <ul class="list-unstyled sub-category-list bg-light">
+                                                        <li><a href="#" class="sub-link">Trolley Bags</a></li>
+                                                        <li><a href="#" class="sub-link">Backpacks</a></li>
+                                                        <li><a href="#" class="sub-link">Duffle Bags</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                            <li class="category-item border-bottom">
+                                                <div class="category-header d-flex justify-content-between align-items-center p-3"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-office-2"
+                                                    aria-expanded="false" style="cursor: pointer;">
+                                                    <span class="d-flex align-items-center fw-medium">
+                                                        <i class="fa-solid fa-briefcase me-3 text-danger fs-5"></i>
+                                                        Office Bags
+                                                    </span>
+                                                    <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                                                </div>
+
+                                                <div class="collapse" id="sub-office-2" data-bs-parent="#nav-category">
+                                                    <ul class="list-unstyled sub-category-list bg-light">
+                                                        <li><a href="#" class="sub-link">Laptop Bags</a></li>
+                                                        <li><a href="#" class="sub-link">Messenger Bags</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="nav-menu" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 main-menu-list">
+                                            <li><a href="#"><i class="fa-solid fa-house me-3"></i> Home</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-bolt me-3"></i> Campaigns</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-shop me-3"></i> Shop</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-envelope me-3"></i> Contact Us</a>
+                                            </li>
+                                            <li><a href="#"><i class="fa-solid fa-circle-info me-3"></i> About Us</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <a href="index.html"><img src="images/logo.png" alt="Suitcase BD" class="img-fluid"></a>
+                    </div>
+                    <div class="col-3 text-end">
+                        <a href="#" class="text-decoration-none text-muted position-relative">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="bottom-header border-bottom   py-1">
-            <div class="container">
+        <section class="bottom-header border-bottom  py-1 header-sticky">
+            <div class="container d-none d-lg-block">
                 <div class="navbar-grid">
-                    <div class="allCategory">
+                    <div class="allCategory position-relative">
                         <i class="fa-solid fa-table-cells-large"></i>
-                        Browse All Categories
+                        All Categories
+                        <div class="category-dropdown-wrapper shadow-sm">
+                            <ul class="main-category-list list-unstyled mb-0">
+
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <nav class="navbar">
-                        <ul class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                        <ul class="d-flex justify-content-center align-items-center flex-wrap">
                             <li><a href="">Home</a></li>
                             <li><a href="">Campaigns</a></li>
-                            <li><a href="">All Bagpacks</a></li>
+                            <li><a href="">Bagpacks</a></li>
                             <li><a href="">New Arrival</a></li>
-                            <li><a href="">Fashion Bagpacks</a></li>
-                            <li><a href="">Official Bagpacks</a></li>
-                            <li><a href="">Travel Bags</a></li>
-                            <li><a href="">Cross Body</a></li>
                         </ul>
+
                     </nav>
                 </div>
+            </div>
+            <div class="container d-lg-none">
+                <form action="" method="post">
+                    <div class="from-group">
+                        <input type="text" class="form-control" placeholder="Search for products, brands and more"
+                            aria-label="Search">
+                    </div>
+                </form>
             </div>
         </section>
     </header>
@@ -1064,7 +1284,8 @@
                     </div>
                     <div class="d-flex mb-3">
                         <i class="fas fa-envelope text-danger me-3 mt-1"></i>
-                        <a href="mailto:suitcase.info.bd@gmail.com" class="small text-muted mb-0">suitcase.info.bd@gmail.com</a>
+                        <a href="mailto:suitcase.info.bd@gmail.com"
+                            class="small text-muted mb-0">suitcase.info.bd@gmail.com</a>
                     </div>
                     <div class="d-flex mb-3">
                         <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>

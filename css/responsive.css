@@ -6,11 +6,19 @@
 @media (min-width: 1200px) and (max-width: 1500px) {}
 
 /* 2. Standard Desktop (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar-grid {
+        gap: 10px;
+    }
+
+    .navbar ul li a {
+        padding: 5px;
+    }
+}
 
 /* 3. Tablet Device (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-      .btn {
+    .btn {
         padding: 5px 20px;
         width: 100%;
     }
@@ -21,7 +29,8 @@
     .container {
         width: 450px;
     }
-      .btn {
+
+    .btn {
         padding: 5px 20px;
         width: 100%;
     }
