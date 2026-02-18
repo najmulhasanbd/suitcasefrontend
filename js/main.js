@@ -1,46 +1,7 @@
 (function ($) {
     "use strict";
 
-    //*------------------------------------------
-    // 0. theme dark mode toggle
-    //-------------------------------------------*/
-    $(document).ready(function () {
-        const htmlElement = document.documentElement;
-        const darkModeToggle = $('#darkModeToggle');
-        const icon = darkModeToggle.find('i');
-
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-bs-theme', currentTheme);
-        updateIcon(currentTheme);
-
-        darkModeToggle.on('click', function () {
-            let theme = htmlElement.getAttribute('data-bs-theme');
-            let newTheme = (theme === 'light') ? 'dark' : 'light';
-
-            htmlElement.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-        });
-
-        function updateIcon(theme) {
-            if (theme === 'dark') {
-                icon.removeClass('fa-moon').addClass('fa-sun');
-                darkModeToggle.removeClass('btn-outline-secondary').addClass('btn-outline-warning');
-            } else {
-                icon.removeClass('fa-sun').addClass('fa-moon');
-                darkModeToggle.removeClass('btn-outline-warning').addClass('btn-outline-secondary');
-            }
-        }
-
-        $('.dropdown-item').on('click', function (e) {
-            e.preventDefault();
-            var selectedImg = $(this).find('img').attr('src');
-            var selectedText = $(this).text().trim();
-            var htmlContent = '<img src="' + selectedImg + '" class="me-1" alt="' + selectedText + '"> ' + selectedText;
-            $('#languageDropdown').html(htmlContent);
-        });
-    });
-
+   
 
     /*------------------------------------------
         1. Sticky Header
