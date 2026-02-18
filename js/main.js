@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-   
+
 
     /*------------------------------------------
         1. Sticky Header
@@ -38,47 +38,45 @@
     /*------------------------------------------
         2. Owl Carousel Active
     -------------------------------------------*/
-$('.feature-category-grid').owlCarousel({
-    loop: true,
-    margin: 0,
-    items: 6,
-    navText: [
-        '<i class="fa-solid fa-chevron-left"></i>',
-        '<i class="fa-solid fa-chevron-right"></i>'
-    ],
-    nav: true,
-    dots: true,
-    autoplay: true, 
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true, 
-    responsive: {
-        0: {
-            items: 2,
-        },
-        767: {
-            items: 3
-        },
-        992: {
-            items: 5
+    $('.feature-category-grid').owlCarousel({
+        loop: true,
+        margin: 0,
+        items: 6,
+        navText: [
+            '<i class="fa-solid fa-chevron-left"></i>',
+            '<i class="fa-solid fa-chevron-right"></i>'
+        ],
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 2,
+            },
+            767: {
+                items: 3
+            },
+            992: {
+                items: 5
+            }
         }
-    }
-});
+    });
 
     /*------------------------------------------
         3. Scroll To Top
     -------------------------------------------*/
-    if ($.hasOwnProperty('scrollUp')) {
-        $.scrollUp({
-            scrollName: 'scrollUp',
-            topDistance: '300',
-            topSpeed: 300,
-            animation: 'fade',
-            animationInSpeed: 200,
-            animationOutSpeed: 200,
-            scrollText: '<i class="icofont icofont-long-arrow-up"></i>',
-            activeOverlay: false,
-        });
-    }
+    $.scrollUp({
+        scrollName: "scrollUp",
+        topDistance: "300",
+        topSpeed: 300,
+        animation: "fade",
+        animationInSpeed: 200,
+        animationOutSpeed: 200,
+        scrollText: '<i class="fa-solid fa-arrow-turn-up"></i>',
+        activeOverlay: false,
+    });
 
     /*------------------------------------------
         4. WOW Active (Check if exists)

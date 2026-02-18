@@ -390,14 +390,54 @@ textarea {
 }
 
 /*-----------------------------------------------------------------------------------
-    7. Owl Carousel & ScrollUp
+    7. footer
 -----------------------------------------------------------------------------------*/
+.footer-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.footer-title {
+    color: #8b1d1d; 
+    font-size: 1.1rem;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #8b1d1d;
+    padding-left: 5px;
+}
+
+.footer-links li a.active {
+    color: #8b1d1d;
+    font-weight: bold;
+}
+
+.social-icons a i {
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.2);
+}
+
+.footer-section i.fas {
+    width: 20px;
+}
 
 #scrollUp {
     position: fixed;
-    right: 50px;
-    bottom: 77px;
+    left: 50px;
+    bottom: 30px;
     height: 35px;
     width: 35px;
     background: var(--success-color);

@@ -3,15 +3,17 @@
 -----------------------------------------------------------------------------------*/
 
 /* 1. Extra Large Desktop (1200px to 1500px) */
-@media (min-width: 1200px) and (max-width: 1500px) {
-}
+@media (min-width: 1200px) and (max-width: 1500px) {}
 
 /* 2. Standard Desktop (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-}
+@media (min-width: 992px) and (max-width: 1199px) {}
 
 /* 3. Tablet Device (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
+      .btn {
+        padding: 5px 20px;
+        width: 100%;
+    }
 }
 
 /* 4. Large Mobile (480px to 767px) */
@@ -19,18 +21,25 @@
     .container {
         width: 450px;
     }
+      .btn {
+        padding: 5px 20px;
+        width: 100%;
+    }
 }
 
 /* 5. Small Mobile (Up to 479px) */
 @media (max-width: 479px) {
-    
+
     .container {
-        width: 100%; 
-        padding: 0 15px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .btn {
+        padding: 5px 20px;
+        width: 100%;
     }
 }
 
 /* 6. All Mobile Devices (Default for Mobile) */
-@media (max-width: 767px) {
-    
-}
+@media (max-width: 767px) {}
