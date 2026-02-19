@@ -622,19 +622,16 @@ textarea {
 /*-----------------------------------------------------------------------------------
     cart
 -----------------------------------------------------------------------------------*/
-/* Cart Container */
 .ez-cart-container {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Table Customization */
 .ez-cart-container .table thead th {
     border-top: none;
     border-bottom: 1px solid #eee;
 }
 
-/* Quantity Box */
 .ez-qty-box input {
     border-left: none;
     border-right: none;
@@ -642,7 +639,6 @@ textarea {
     color: #333;
 }
 
-/* Inputs & Buttons */
 .ez-cart-container .ez-input {
     border: 1px solid #ced4da;
     padding: 10px 15px;
@@ -651,7 +647,7 @@ textarea {
 }
 
 .ez-cart-container .ez-input:focus {
-    border-color: #8b0000;
+    border-color: var(--primary-color);
     box-shadow: none;
 }
 
@@ -663,7 +659,7 @@ textarea {
     border-radius: 5px;
     letter-spacing: 1px;
     transition: 0.3s;
-    background-color: #8b0000; /* Deep Red Theme */
+    background-color: var(--primary-color);
     border: none;
 }
 
@@ -671,6 +667,100 @@ textarea {
     background-color: #a50000;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+
+    .table-responsive table,
+    .table-responsive thead,
+    .table-responsive tbody,
+    .table-responsive th,
+    .table-responsive td,
+    .table-responsive tr {
+        display: block;
+        width: 100%;
+    }
+
+    .table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table-responsive tr {
+        border: 1px solid #eee;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        padding: 5px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    }
+
+    .table-responsive td {
+        border: none !important;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .table-responsive td:first-child {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        border-bottom: 1px solid #f1f1f1 !important;
+    }
+
+    .table-responsive td:first-child img {
+        width: 65px !important;
+        height: 65px;
+        object-fit: cover;
+    }
+
+    .table-responsive td:first-child h6 {
+        font-size: 14px !important;
+        white-space: normal;
+        max-width: 100%;
+    }
+
+    .table-responsive td:nth-child(2)::before {
+        content: "Unit Price:";
+        font-weight: normal;
+        color: #777;
+    }
+
+    .table-responsive td:nth-child(3)::before {
+        content: "Quantity:";
+        font-weight: normal;
+        color: #777;
+    }
+
+    .table-responsive td:nth-child(4)::before {
+        content: "Total:";
+        font-weight: normal;
+        color: #777;
+    }
+
+    .quantity {
+        width: 110px !important;
+        height: 38px !important;
+        background: #fdfdfd !important;
+    }
+
+    .quantity__input {
+        width: 40px !important;
+        font-size: 14px !important;
+    }
+
+    .quantity a {
+        padding: 0 12px !important;
+        font-size: 16px;
+    }
+
+    .table-responsive td:last-child {
+        justify-content: flex-end;
+        padding-top: 0 !important;
+    }
 }
 
 /*-----------------------------------------------------------------------------------
@@ -693,9 +783,11 @@ textarea {
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.1);
     outline: none;
 }
+
 .ez-card h5 {
     color: var(--primary-color);
 }
+
 .ez-card {
     border: 1px solid #eee !important;
     border-radius: 10px;
@@ -720,9 +812,11 @@ textarea {
         padding-top: 20px !important;
     }
 }
+
 .input-group .btn {
     z-index: 0;
 }
+
 /*-----------------------------------------------------------------------------------
     7. footer
 -----------------------------------------------------------------------------------*/
