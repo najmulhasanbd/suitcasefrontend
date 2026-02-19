@@ -818,6 +818,52 @@ textarea {
 }
 
 /*-----------------------------------------------------------------------------------
+    contact
+-----------------------------------------------------------------------------------*/
+.contact-input {
+    border: 1px solid #e1e1e1;
+    padding: 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.contact-input:focus {
+    box-shadow: 0 0 0 0.2rem var(--primary-color);
+    outline: none;
+}
+
+.contact-btn {
+    border: none;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: var(--primary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--primary-color);
+}
+
+.info-card {
+    transition: 0.3s;
+    height: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.info-icon i {
+    box-shadow: 0 4px 10px var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .contact-page iframe {
+        min-height: 300px;
+    }
+}
+
+/*-----------------------------------------------------------------------------------
     7. footer
 -----------------------------------------------------------------------------------*/
 .footer-section {
