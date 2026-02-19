@@ -620,6 +620,60 @@ textarea {
 }
 
 /*-----------------------------------------------------------------------------------
+    cart
+-----------------------------------------------------------------------------------*/
+/* Cart Container */
+.ez-cart-container {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Table Customization */
+.ez-cart-container .table thead th {
+    border-top: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* Quantity Box */
+.ez-qty-box input {
+    border-left: none;
+    border-right: none;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Inputs & Buttons */
+.ez-cart-container .ez-input {
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.ez-cart-container .ez-input:focus {
+    border-color: #8b0000;
+    box-shadow: none;
+}
+
+.ez-card {
+    border: 1px solid #eee !important;
+}
+
+.ez-btn {
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    background-color: #8b0000; /* Deep Red Theme */
+    border: none;
+}
+
+.ez-btn:hover {
+    background-color: #a50000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+}
+
+/*-----------------------------------------------------------------------------------
     checkout
 -----------------------------------------------------------------------------------*/
 .ez-checkout-container {

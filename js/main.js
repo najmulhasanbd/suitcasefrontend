@@ -65,6 +65,36 @@
     });
 
     /*------------------------------------------
+   product increment decrement
+   -------------------------------------------*/
+    $(document).ready(function () {
+        $(".quantity__minus").on("click", function (e) {
+            e.preventDefault();
+
+            var input = $(this).siblings(".quantity__input");
+            var value = parseInt(input.val());
+
+            if (!isNaN(value) && value > 1) {
+                value--;
+                input.val(value);
+            }
+        });
+
+        $(".quantity__plus").on("click", function (e) {
+            e.preventDefault();
+
+            var input = $(this).siblings(".quantity__input");
+            var value = parseInt(input.val());
+
+            if (!isNaN(value)) {
+                value++;
+                input.val(value);
+            }
+        });
+    });
+
+
+    /*------------------------------------------
         3. Scroll To Top
     -------------------------------------------*/
     $.scrollUp({
