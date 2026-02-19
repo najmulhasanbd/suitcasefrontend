@@ -357,93 +357,102 @@
     </header>
 
     <div class="ez-breadcrumb-wrapper py-3 bg-light border-bottom mb-4">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item">
-                    <a href="#" class="text-decoration-none text-muted">
-                        <i class="fa-solid fa-house-chimney me-1"></i> Home
-                    </a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#" class="text-decoration-none text-muted">Cart</a>
-                </li>
-                <li class="breadcrumb-item active fw-bold text-danger" aria-current="page">
-                    Checkout
-                </li>
-            </ol>
-        </nav>
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-muted">
+                            <i class="fa-solid fa-house-chimney me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-muted">Cart</a>
+                    </li>
+                    <li class="breadcrumb-item active fw-bold text-danger" aria-current="page">
+                        Checkout
+                    </li>
+                </ol>
+            </nav>
+        </div>
     </div>
-</div>
 
     <main>
-        <div class="ez-checkout-container py-5">
-            <div class="container">
-                <div class="row g-4">
+       <div class="ez-checkout-container py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="ez-card p-4 shadow-sm border rounded-3 bg-white">
+                    <h5 class="fw-bold mb-4 border-bottom pb-2 ">Shipping & Billing Details</h5>
 
-                    <div class="col-lg-8">
-                        <div class="ez-card p-4 shadow-sm border rounded-3 bg-white">
-                            <h5 class="fw-bold mb-4 border-bottom pb-2 text-danger">Checkout Page</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="small fw-bold mb-1">Full Name *</label>
+                            <input type="text" class="form-control ez-input" placeholder="Enter your full name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-bold mb-1">Mobile Number *</label>
+                            <input type="tel" class="form-control ez-input" placeholder="017XXXXXXXX">
+                        </div>
+                        <div class="col-12">
+                            <label class="small fw-bold mb-1">Email Address (Optional)</label>
+                            <input type="email" class="form-control ez-input" placeholder="example@mail.com">
+                        </div>
+                        <div class="col-12">
+                            <label class="small fw-bold mb-1">Full Address *</label>
+                            <textarea class="form-control ez-input" rows="2" placeholder="House/Road/Area"></textarea>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="small fw-bold mb-1">City/Area *</label>
+                            <select class="form-select ez-input">
+                                <option>Select City</option>
+                                <option>Inside Dhaka</option>
+                                <option>Outside Dhaka</option>
+                            </select>
+                        </div>
 
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="small fw-bold mb-1">Full Name *</label>
-                                    <input type="text" class="form-control ez-input" placeholder="Enter name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="small fw-bold mb-1">Mobile Number *</label>
-                                    <input type="tel" class="form-control ez-input" placeholder="017XXXXXXXX">
-                                </div>
-                                <div class="col-12">
-                                    <label class="small fw-bold mb-1">Full Address *</label>
-                                    <textarea class="form-control ez-input" rows="2"
-                                        placeholder="House/Road/Area"></textarea>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="small fw-bold mb-1">City *</label>
-                                    <select class="form-select ez-input">
-                                        <option>Select City</option>
-                                        <option>Dhaka</option>
-                                        <option>Outside Dhaka</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="small fw-bold mb-1">Payment Method *</label>
-                                    <select class="form-select ez-input">
-                                        <option>Cash on Delivery</option>
-                                    </select>
-                                </div>
-                            </div>
+                        <div class="col-md-6">
+                            <label class="small fw-bold mb-1">Payment Method *</label>
+                            <select class="form-select ez-input">
+                                <option>Cash on Delivery</option>
+                                <option>bKash / Nagad</option>
+                            </select>
                         </div>
                     </div>
-
-                    <div class="col-lg-4">
-                        <div class="ez-card p-4 shadow-sm border rounded-3 bg-white sticky-top" style="top: 20px;">
-                            <h5 class="fw-bold mb-4 border-bottom pb-2">Order Summary</h5>
-
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Items Total</span>
-                                <span class="fw-bold">৳ 1499</span>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Shipping Fee</span>
-                                <span class="fw-bold">৳ 70</span>
-                            </div>
-                            <hr>
-                            <div class="d-flex justify-content-between mb-4">
-                                <span class="h5 fw-bold">Total Bill</span>
-                                <span class="h5 fw-bold text-danger">৳ 1569</span>
-                            </div>
-
-                            <button class="btn btn-danger btn-lg w-100 fw-bold py-3 ez-btn">
-                                PLACE ORDER NOW
-                            </button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+
+            <div class="col-lg-4">
+                <div class="ez-card p-4 shadow-sm border rounded-3 bg-white sticky-top" style="top: 20px;">
+                    <h5 class="fw-bold mb-4 border-bottom pb-2">Order Summary</h5>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Items Total</span>
+                        <span class="fw-bold">৳ 1499</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Shipping Fee</span>
+                        <span class="fw-bold">৳ 70</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="h5 fw-bold">Total Bill</span>
+                        <span class="h5 fw-bold text-danger">৳ 1569</span>
+                    </div>
+
+                    <button class="btn btn-danger btn-lg w-100 fw-bold py-3 ez-btn">
+                        PLACE ORDER NOW
+                    </button>
+                    
+                    <div class="mt-3 text-center">
+                        <small class="text-muted"><i class="fa-solid fa-shield-halved me-1"></i> Secure Checkout</small>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</div>
     </main>
 
     <footer class="footer-section pt-5 pb-3 mt-5" style="background-color: #fff9f9; border-top: 1px solid #f2e1e1;">
