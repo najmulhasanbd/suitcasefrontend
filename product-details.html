@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suitcase BD</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<style>
+    .text-maroon {
+        color: var(--primary-color);
+    }
+
+    .btn-maroon {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+    }
+
+    .btn-maroon:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .btn-outline-maroon {
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+    }
+
+    .btn-outline-maroon:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .color-box {
+        width: 40px;
+        height: 40px;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-check:checked+.color-box {
+        border-color: var(--primary-color);
+    }
+
+    #productSlider .item img {
+        border-radius: 8px;
+        border: 1px solid #f1f1f1;
+    }
+
+    .thumb_nav .item img {
+        width: 100%;
+        height: 70px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .thumb_nav .item img.active {
+        border-color: #800020;
+        opacity: 1;
+    }
+
+    .thumb_nav .item img:hover {
+        border-color: #800020;
+    }
+
+    .text-maroon {
+        color: var(--primary-color);
+    }
+
+    .leading-relaxed {
+        line-height: 1.8;
+    }
+
+    #productTab {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: 15px;
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
+
+    #productTab .nav-link {
+        border: none;
+        font-family: var(--family);
+        color: var(--text-main);
+        background: var(--card-bg);
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+        padding: 10px 25px;
+        font-size: 14px;
+        font-weight: 500;
+        -webkit-transition: var(--transition);
+        -o-transition: var(--transition);
+        transition: var(--transition);
+    }
+
+    #productTab .nav-link.active {
+        background: var(--primary-color);
+        color: #FFFFFF !important;
+        -webkit-box-shadow: 0 4px 15px rgba(128, 0, 32, 0.2);
+        box-shadow: 0 4px 15px rgba(128, 0, 32, 0.2);
+    }
+
+    #productTab .nav-link:hover:not(.active) {
+        background: var(--border-color);
+        color: var(--text-heading);
+    }
+
+    .tab-pane {
+        -webkit-animation: fadeIn 0.4s ease-in-out;
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    /* Keyframes with Prefixes */
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+            -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+
+    #delivery-pane .border {
+        -webkit-transition: var(--transition);
+        transition: var(--transition);
+    }
+
+    #delivery-pane .border:hover {
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        border-color: var(--primary-color) !important;
+    }
+
+    .bg-light i {
+        color: var(--primary-color) !important;
+    }
+</style>
+
+<body>
+    <header>
+        <section class="top-bar border-bottom  py-2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center text-md-start d-none d-md-block">
+                        <small class="text-muted">Welcome you to SUITCASE BD</small>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <small class="text-success fw-bold d-flex align-items-center justify-content-center">
+                            <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();"
+                                onmouseout="this.start();">
+                                <span style="margin-right: 50px;">🚀 100% Secure delivery 1</span>
+                                <span style="margin-right: 50px;">🔒 100% Secure delivery 2</span>
+                                <span style="margin-right: 50px;">📦 100% Secure delivery 3</span>
+                            </marquee>
+                        </small>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center ">
+                        <div class="dropdown me-3">
+                            <a class="text-decoration-none text-muted small" href="#">Help</a>
+                        </div>
+
+                        <div class="dropdown me-3">
+                            <a class="text-decoration-none text-muted small dropdown-toggle" href="#" role="button"
+                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://flagcdn.com/w20/gb.png" class="me-1" alt="English"> English
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0"
+                                aria-labelledby="languageDropdown">
+                                <li>
+                                    <a class="dropdown-item small d-flex align-items-center" href="#">
+                                        <img src="https://flagcdn.com/w20/gb.png" class="me-2" alt="English"> English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item small d-flex align-items-center" href="#">
+                                        <img src="https://flagcdn.com/w20/bd.png" class="me-2" alt="Bangla"> Bangla
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#"
+                            class="btn btn-warning btn-sm fw-bold px-3 d-none d-lg-block text-dark header__account">Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="middle-header  border-bottom  py-2 ">
+            <div class="container d-none d-lg-block">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" alt="Suitcase BD" class="img-fluid"
+                                    style="max-height: 50px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <form action="" method="post">
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                    placeholder="Search for products, brands and more" aria-label="Search">
+                                <button class="btn btn-outline-secondary" type="submit"><i
+                                        class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-6 text-end d-flex align-items-center justify-content-end">
+                        <div class="d-flex align-items-center me-3 p-2 rounded shadow-sm">
+                            <div class="bg-light rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                                style="width: 40px; height: 40px;">
+                                <i class="fas fa-phone-alt text-danger"></i>
+                            </div>
+                            <div class="lh-1">
+                                <small class="text-start text-muted d-block" style="font-size: 11px;">Need help? Call
+                                    us</small>
+                                <strong style="color: var(--primary-color);">01603580981</strong>
+                            </div>
+                        </div>
+                        <a href="#" class="text-decoration-none text-muted position-relative">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-lg-none">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <div class="mobile_menu" data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+                            aria-controls="mobileMenu">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                    <!-- mobile menu -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu"
+                        aria-labelledby="mobileMenuLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body p-0">
+                            <div class="mobile-nav-wrapper shadow-sm border rounded">
+                                <nav>
+                                    <div class="nav nav-tabs nav-fill bg-light" id="nav-tab" role="tablist">
+                                        <button class="nav-link active fw-bold py-3 text-uppercase"
+                                            id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category"
+                                            type="button" role="tab">
+                                            <i class="fa-solid fa-list-ul me-2"></i>Categories
+                                        </button>
+                                        <button class="nav-link fw-bold py-3 text-uppercase" id="nav-menu-tab"
+                                            data-bs-toggle="tab" data-bs-target="#nav-menu" type="button" role="tab">
+                                            <i class="fa-solid fa-bars me-2"></i>Menu
+                                        </button>
+                                    </div>
+                                </nav>
+
+                                <div class="tab-content bg-white" id="nav-tabContent">
+                                    <div class="tab-pane fade show active mobile-nav-wrapper" id="nav-category"
+                                        role="tabpanel">
+                                        <ul class="list-unstyled mb-0 category-list">
+
+                                            <li class="category-item border-bottom">
+                                                <div class="category-header d-flex justify-content-between align-items-center p-3"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-travel-1"
+                                                    aria-expanded="false" style="cursor: pointer;">
+                                                    <span class="d-flex align-items-center fw-medium">
+                                                        <i
+                                                            class="fa-solid fa-person-walking-luggage me-3 text-danger fs-5"></i>
+                                                        Travel Bags
+                                                    </span>
+                                                    <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                                                </div>
+
+                                                <div class="collapse" id="sub-travel-1" data-bs-parent="#nav-category">
+                                                    <ul class="list-unstyled sub-category-list bg-light">
+                                                        <li><a href="#" class="sub-link">Trolley Bags</a></li>
+                                                        <li><a href="#" class="sub-link">Backpacks</a></li>
+                                                        <li><a href="#" class="sub-link">Duffle Bags</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                            <li class="category-item border-bottom">
+                                                <div class="category-header d-flex justify-content-between align-items-center p-3"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-office-2"
+                                                    aria-expanded="false" style="cursor: pointer;">
+                                                    <span class="d-flex align-items-center fw-medium">
+                                                        <i class="fa-solid fa-briefcase me-3 text-danger fs-5"></i>
+                                                        Office Bags
+                                                    </span>
+                                                    <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                                                </div>
+
+                                                <div class="collapse" id="sub-office-2" data-bs-parent="#nav-category">
+                                                    <ul class="list-unstyled sub-category-list bg-light">
+                                                        <li><a href="#" class="sub-link">Laptop Bags</a></li>
+                                                        <li><a href="#" class="sub-link">Messenger Bags</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="nav-menu" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 main-menu-list">
+                                            <li><a href="#"><i class="fa-solid fa-house me-3"></i> Home</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-bolt me-3"></i> Campaigns</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-shop me-3"></i> Shop</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-envelope me-3"></i> Contact Us</a>
+                                            </li>
+                                            <li><a href="#"><i class="fa-solid fa-circle-info me-3"></i> About Us</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <a href="index.html"><img src="images/logo.png" alt="Suitcase BD" class="img-fluid"></a>
+                    </div>
+                    <div class="col-3 text-end">
+                        <a href="#" class="text-decoration-none text-muted position-relative">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-header border-bottom  py-1 header-sticky">
+            <div class="container d-none d-lg-block">
+                <div class="navbar-grid">
+                    <div class="allCategory position-relative">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        All Categories
+                        <div class="category-dropdown-wrapper shadow-sm">
+                            <ul class="main-category-list list-unstyled mb-0">
+
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="navbar">
+                        <ul class="d-flex justify-content-center align-items-center flex-wrap">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Campaigns</a></li>
+                            <li><a href="">Bagpacks</a></li>
+                            <li><a href="">New Arrival</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+            <div class="container d-lg-none">
+                <form action="" method="post">
+                    <div class="from-group">
+                        <input type="text" class="form-control" placeholder="Search for products, brands and more"
+                            aria-label="Search">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </header>
+
+    <div class="ez-breadcrumb-wrapper py-3 bg-light border-bottom mb-4">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-muted">
+                            <i class="fa-solid fa-house-chimney me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-muted">Cart</a>
+                    </li>
+                    <li class="breadcrumb-item active fw-bold text-danger" aria-current="page">
+                        Cart
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <div class="container my-5">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="product_main">
+                        <div class="product_thumb owl-carousel owl-theme mb-2" id="productSlider">
+                            <div class="item" data-hash="slide1">
+                                <a href="images/banner/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="item" data-hash="slide2">
+                                <a href="images/product/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="item" data-hash="slide3">
+                                <a href="images/product/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="item" data-hash="slide4">
+                                <a href="images/product/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="item" data-hash="slide5">
+                                <a href="images/product/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="item" data-hash="slide6">
+                                <a href="images/product/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="item" data-hash="slide7">
+                                <a href="images/product/1.png" data-lightbox="product-gallery">
+                                    <img src="images/product/1.png" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="owl-carousel owl-theme thumb_nav" id="thumbSlider">
+                            <div class="item"><a href="#slide1"><img src="images/product/1.png" class="active"
+                                        alt=""></a></div>
+                            <div class="item"><a href="#slide2"><img src="images/product/1.png" alt=""></a></div>
+                            <div class="item"><a href="#slide3"><img src="images/product/1.png" alt=""></a></div>
+                            <div class="item"><a href="#slide4"><img src="images/product/1.png" alt=""></a></div>
+                            <div class="item"><a href="#slide5"><img src="images/product/1.png" alt=""></a></div>
+                            <div class="item"><a href="#slide6"><img src="images/product/1.png" alt=""></a></div>
+                            <div class="item"><a href="#slide7"><img src="images/product/1.png" alt=""></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <h4 class="fw-bold">Premium Functional Backpack (TF00)</h4>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <h4 class="text-danger fw-bold mb-0">৳ 2,889.00</h4>
+                        <del class="text-muted small">৳ 2,889.00</del>
+                    </div>
+
+                    <p class="mb-1 small"><strong>In Stock :</strong> 234</p>
+                    <p class="mb-1 small"><strong>Brand :</strong> XYZ</p>
+                    <p class="mb-3 small"><strong>Product Code :</strong> 1234</p>
+
+                    <div class="mb-3">
+                        <p class="mb-2 small fw-bold">Choose Color : <span id="selectedColor">Black</span></p>
+                        <div class="d-flex gap-2">
+                            <input type="radio" class="btn-check" name="color" id="color1" value="Black" checked>
+                            <label class="btn color-box shadow-sm" for="color1" style="background-color: #ccc;"></label>
+
+                            <input type="radio" class="btn-check" name="color" id="color2" value="Grey">
+                            <label class="btn color-box shadow-sm" for="color2" style="background-color: #bbb;"></label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h6>Quantity</h6>
+                        <div class="quantity d-flex  align-items-center border rounded bg-light overflow-hidden "
+                            style="width: fit-content;">
+                            <a href="#" class="quantity__minus px-2 text-decoration-none text-muted">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <input name="quantity" type="text"
+                                class="quantity__input border-0 text-center fw-bold bg-transparent" value="1" disabled
+                                style="width: 35px; font-size: 14px;">
+                            <a href="#" class="quantity__plus px-2 text-decoration-none text-muted">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-3 gap-2">
+                        <button class="btn w-100 btn-sm btn-outline-primary">Buy Now</button>
+                        <button class="btn w-100 btn-sm btn-outline-primary">Add to Cart</button>
+                    </div>
+
+                    <div class="border rounded p-2 mb-3 d-flex align-items-center gap-2 shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35"
+                            alt="WhatsApp">
+
+                        <div>
+                            <div class="small text-muted" style="font-size: 10px;">Chat with us</div>
+                            <div class="fw-bold small">
+                                <a href="https://wa.me/880123456789" target="_blank"
+                                    class="text-decoration-none text-dark">
+                                    +880123456789
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="small">Share :
+                        <span class="ms-2 text-primary fs-5"><i class="fa-brands fa-facebook"></i></span>
+                        <span class="ms-2 text-success fs-5"><i class="fa-brands fa-whatsapp"></i></span>
+                        <span class="ms-2 text-danger fs-5"><i class="fa-brands fa-youtube"></i></span>
+                        <span class="ms-2 text-info fs-5"><i class="fa-brands fa-telegram"></i></span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-light shadow-sm mb-3">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="fa-solid fa-truck-moving text-maroon fs-4"></i>
+                                <span class="fw-bold small">Delivery Details</span>
+                            </div>
+                            <div class="border rounded p-2 mb-2 bg-light position-relative overflow-hidden">
+                                <div class="d-flex gap-1 align-items-center">
+                                    <i class="fa-solid fa-location-dot text-danger"></i>
+                                    <div class="small fw-bold  border-4">Inside Dhaka</div>
+                                </div>
+                                <div class="text-muted" style="font-size: 14px; padding-left: 12px;">Shipping Charge :
+                                    ৳70</div>
+                                <div class="text-muted" style="font-size: 14px; padding-left: 12px;">Delivery Time : 1-2
+                                    Days</div>
+                            </div>
+                            <div class="border rounded p-2 bg-light position-relative overflow-hidden">
+                                <div class="d-flex gap-1 align-items-center">
+                                    <i class="fa-solid fa-location-dot text-danger"></i>
+                                    <div class="small fw-bold  border-4">Outside Dhaka</div>
+                                </div>
+                                <div class="text-muted" style="font-size: 14px; padding-left: 12px;">Shipping Charge :
+                                    ৳130</div>
+                                <div class="text-muted" style="font-size: 14px; padding-left: 12px;">Delivery Time : 2-4
+                                    Days</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-light shadow-sm">
+                        <div class="card-body p-3">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="fa-solid fa-rotate-left text-maroon fs-4"></i>
+                                <span class="fw-bold small">Return & Warranty</span>
+                            </div>
+                            <div class="border rounded p-2 bg-light">
+                                <div class="small fw-bold mb-1"><i
+                                        class="fa-solid fa-circle-check text-maroon me-1"></i> 3 Days Replacement
+                                    Guarantee</div>
+                                <div class="text-muted" style="font-size: 14px;">*Conditions Apply</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-tabs border-0" id="productTab" role="tablist">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab"
+                                data-bs-target="#desc-pane">Description</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#review-pane">Reviews</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                                data-bs-target="#delivery-pane">Delivery & Return</button></li>
+                    </ul>
+
+                    <div class="tab-content border rounded p-4 bg-white shadow-sm" id="productTabContent">
+                        <div class="tab-pane fade show active" id="desc-pane" role="tabpanel" tabindex="0">
+                            <h5 class="fw-bold mb-3">Product Details</h5>
+                            <p class="text-muted">এখানে আপনার প্রোডাক্টের বিস্তারিত বর্ণনা থাকবে। আপনি চাইলে এখানে বুলেট
+                                পয়েন্ট ব্যবহার করতে পারেন যা ইউজারের পড়তে সুবিধা হয়।</p>
+                            <ul class="text-muted">
+                                <li>High-quality premium material.</li>
+                                <li>Durable and long-lasting design.</li>
+                                <li>Available in multiple colors and sizes.</li>
+                                <li>1-year replacement warranty.</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-pane fade" id="review-pane" role="tabpanel" tabindex="0">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h5 class="fw-bold mb-4">Customer Reviews</h5>
+
+                                    <div class="d-flex gap-3 mb-4 border-bottom pb-3">
+                                        <img src="https://i.pravatar.cc/50?img=1" class="rounded-circle" width="50"
+                                            height="50" alt="User">
+                                        <div>
+                                            <div class="text-warning mb-1">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <h6 class="mb-0 fw-bold">Tanvir Ahmed <span
+                                                    class="text-muted small fw-normal ms-2">- 2 days ago</span></h6>
+                                            <p class="text-muted small mt-2">The product quality is amazing! Highly
+                                                recommended for everyone. Fast delivery too.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-3 mb-4">
+                                        <img src="https://i.pravatar.cc/50?img=2" class="rounded-circle" width="50"
+                                            height="50" alt="User">
+                                        <div>
+                                            <div class="text-warning mb-1">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="far fa-star"></i>
+                                            </div>
+                                            <h6 class="mb-0 fw-bold">Anika Kabir <span
+                                                    class="text-muted small fw-normal ms-2">- 1 week ago</span></h6>
+                                            <p class="text-muted small mt-2">Good product but the packaging could be
+                                                better.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="delivery-pane" role="tabpanel">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-light p-3 rounded-circle me-3">
+                                                <i class="fas fa-truck text-maroon fs-4"></i>
+                                            </div>
+                                            <h5 class="fw-bold mb-0">Shipping Policy</h5>
+                                        </div>
+                                        <ul class="list-unstyled text-secondary small">
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Inside Dhaka:</strong> Delivery within 24-48 Hours.
+                                            </li>
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Outside Dhaka:</strong> Delivery within 3-5 Working Days.
+                                            </li>
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Shipping Charge:</strong> ৳60 inside Dhaka, ৳120 outside Dhaka.
+                                            </li>
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Order Tracking:</strong> You will receive a tracking ID via SMS.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-light p-3 rounded-circle me-3">
+                                                <i class="fas fa-undo-alt text-maroon fs-4"></i>
+                                            </div>
+                                            <h5 class="fw-bold mb-0">Return & Refund</h5>
+                                        </div>
+                                        <ul class="list-unstyled text-secondary small">
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>7 Days Return:</strong> If the product is defective or damaged.
+                                            </li>
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Condition:</strong> Product must be unused with original
+                                                packaging/tags.
+                                            </li>
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Refund Process:</strong> Refunds are processed within 5-7
+                                                working days.
+                                            </li>
+                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
+                                                <strong>Support:</strong> Call our hotline for any return-related
+                                                queries.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section pt-5 pb-3 mt-5" style="background-color: #fff9f9; border-top: 1px solid #f2e1e1;">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo mb-3">
+                        <img src="images/logo.png" alt="Suitcase BD" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                    <p class="text-muted small lh-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique mauris ac luctus
+                        placerat. Aenean egestas nulla vulputate facilisis commodo.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 ps-lg-5">
+                    <h6 class="fw-bold mb-4 footer-title">Useful Links</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#" class="active">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 ps-lg-4">
+                    <h6 class="fw-bold mb-4 footer-title">Support</h6>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-danger me-3 mt-1"></i>
+                        <p class="small text-muted mb-0">Rahmat Manzil, 18/1/KA, Begumgonj, Narinda, Dhaka - 1100,
+                            Bangladesh</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-envelope text-danger me-3 mt-1"></i>
+                        <a href="mailto:suitcase.info.bd@gmail.com"
+                            class="small text-muted mb-0">suitcase.info.bd@gmail.com</a>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
+                        <a href="tel:+8801603580981" class="small text-muted mb-0">+8801603580981</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-md-end text-lg-start">
+                    <h6 class="fw-bold mb-4 footer-title">Stay in touch</h6>
+                    <div class="social-icons mb-4">
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-facebook fa-lg"
+                                style="color: #1877F2;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-twitter fa-lg"
+                                style="color: #1DA1F2;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-youtube fa-lg"
+                                style="color: #FF0000;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-linkedin fa-lg"
+                                style="color: #0A66C2;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-instagram fa-lg"
+                                style="color: #C13584;"></i></a>
+                    </div>
+                    <div class="payment-methods">
+                        <img src="https://i.ibb.co/Vv9tmkv/mastercard.png" alt="Mastercard" class="me-2 mb-2"
+                            style="height: 30px;">
+                        <img src="https://i.ibb.co/6nd8XvS/visa.png" alt="Visa" class="me-2 mb-2" style="height: 30px;">
+                        <img src="https://i.ibb.co/Hq8T6v6/bkash.png" alt="bKash" class="mb-2"
+                            style="height: 30px; border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-5 mb-4 text-muted opacity-25">
+            <div class="row align-items-center pb-2">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">© 2026 All rights reserved by Suitcase BD</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-muted mb-0">Developed by <span class="fw-bold"> <a href=""
+                                target="_blank">Classic IT</a> </span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: "+8801644058109",
+                facebook: "YOUR_FACEBOOK_PAGE_ID",
+                call_to_action: "Message us",
+                button_color: "#FF6550",
+                position: "right",
+                order: "whatsapp,facebook",
+            };
+            var proto = "https:",
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = url + "/widget-send-button/js/init.js";
+            s.onload = function () {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName("script")[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+
+        setTimeout(() => {
+            try {
+                var x = document.querySelector("a[href*='getbutton.io']");
+                if (x) x.remove();
+            } catch (e) { }
+        }, 2000);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var mainSlider = $('#productSlider');
+            var thumbSlider = $('#thumbSlider');
+            var flag = false;
+
+            mainSlider.owlCarousel({
+                items: 1,
+                loop: false,
+                dots: false,
+                nav: false,
+                URLhashListener: true,
+                startPosition: 'URLHash'
+            }).on('changed.owl.carousel', function (e) {
+                if (!flag) {
+                    flag = true;
+                    thumbSlider.trigger('to.owl.carousel', [e.item.index, 300, true]);
+                    $('.thumb_nav img').removeClass('active');
+                    $('.thumb_nav .owl-item').eq(e.item.index).find('img').addClass('active');
+                    flag = false;
+                }
+            });
+
+            thumbSlider.owlCarousel({
+                items: 5,
+                margin: 10,
+                dots: false,
+                responsive: { 0: { items: 4 }, 600: { items: 5 } }
+            });
+
+            // থাম্বনেইল ক্লিকে মেইন স্লাইড চেঞ্জ
+            $('.thumb_nav a').on('click', function (e) {
+                $('.thumb_nav img').removeClass('active');
+                $(this).find('img').addClass('active');
+            });
+
+            // Lightbox Option
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true,
+                'disableScrolling': true
+            });
+
+            // ফিক্স: ড্র্যাগ করার সময় লাইটবক্স বন্ধ রাখা
+            mainSlider.on('drag.owl.carousel', function () {
+                $('.item a').bind('click.prevent', function (e) {
+                    e.preventDefault();
+                });
+            });
+            mainSlider.on('dragged.owl.carousel', function () {
+                setTimeout(function () {
+                    $('.item a').unbind('click.prevent');
+                }, 100);
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('input[name="color"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                document.getElementById('selectedColor').innerText = e.target.value;
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
