@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Suitcase BD</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<style>
+    @media (min-width: 1200px) and (max-width: 1500px) {
+        .shop_page button {
+            padding: 5px 10px;
+        }
+
+        .single-product .card-footer {
+            padding: 0;
+            padding-bottom: 5px;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+        .single-product .card-footer {
+            padding: 0;
+        }
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        .shop_page button {}
+
+        .single-product .card-footer {
+            padding: 0;
+        }
+    }
+
+    @media (min-width: 480px) and (max-width: 767px) {
+        .sidebar-column {
+            display: none;
+        }
+
+        .shop-page-grid {
+            display: block;
+        }
+
+        .shop_page button {
+            padding: 8px 15px;
+        }
+    }
+
+    @media (max-width: 479px) {
+
+        .shop-page-grid {
+            display: block;
+        }
+
+        .sidebar-column {
+            display: none;
+        }
+
+        .shop_page button {
+            padding: 8px 15px;
+        }
+    }
+
+    @media (max-width: 767px) {}
+
+    .filter-toggle-btn {
+        background: linear-gradient(135deg, #472786, #6b44b8);
+        color: #ffffff !important;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 4px 15px rgba(71, 39, 134, 0.25);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        line-height: 1;
+        z-index: 1;
+        margin: 15px 0;
+    }
+
+    @media (max-width: 991px) {
+
+        /* Ensure the sidebar is NOT hidden by display:none */
+        .sidebar-column {
+            display: block !important;
+            position: fixed;
+            top: 0;
+            left: -320px;
+            /* Start off-screen */
+            width: 300px;
+            height: 100vh;
+            background: #fff;
+            z-index: 10001 !important;
+            transition: all 0.4s ease;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* When the 'show' class is added via JS */
+        .sidebar-column.show {
+            left: 0 !important;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <section class="top-bar border-bottom  py-2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center text-md-start d-none d-md-block">
+                        <small class="text-muted">Welcome you to SUITCASE BD</small>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <small class="text-success fw-bold d-flex align-items-center justify-content-center">
+                            <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();"
+                                onmouseout="this.start();">
+                                <span style="margin-right: 50px;">🚀 100% Secure delivery 1</span>
+                                <span style="margin-right: 50px;">🔒 100% Secure delivery 2</span>
+                                <span style="margin-right: 50px;">📦 100% Secure delivery 3</span>
+                            </marquee>
+                        </small>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center ">
+                        <div class="dropdown me-3">
+                            <a class="text-decoration-none text-muted small" href="#">Help</a>
+                        </div>
+
+                        <div class="dropdown me-3">
+                            <a class="text-decoration-none text-muted small dropdown-toggle" href="#" role="button"
+                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://flagcdn.com/w20/gb.png" class="me-1" alt="English"> English
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0"
+                                aria-labelledby="languageDropdown">
+                                <li>
+                                    <a class="dropdown-item small d-flex align-items-center" href="#">
+                                        <img src="https://flagcdn.com/w20/gb.png" class="me-2" alt="English"> English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item small d-flex align-items-center" href="#">
+                                        <img src="https://flagcdn.com/w20/bd.png" class="me-2" alt="Bangla"> Bangla
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="#"
+                            class="btn btn-warning btn-sm fw-bold px-3 d-none d-lg-block text-dark header__account">Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="middle-header  border-bottom  py-2 ">
+            <div class="container d-none d-lg-block">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" alt="Suitcase BD" class="img-fluid"
+                                    style="max-height: 50px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <form action="" method="post">
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                    placeholder="Search for products, brands and more" aria-label="Search">
+                                <button class="btn btn-outline-secondary" type="submit"><i
+                                        class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-6 text-end d-flex align-items-center justify-content-end">
+                        <div class="d-flex align-items-center me-3 p-2 rounded shadow-sm">
+                            <div class="bg-light rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                                style="width: 40px; height: 40px;">
+                                <i class="fas fa-phone-alt text-danger"></i>
+                            </div>
+                            <div class="lh-1">
+                                <small class="text-start text-muted d-block" style="font-size: 11px;">Need help? Call
+                                    us</small>
+                                <strong style="color: var(--primary-color);">01603580981</strong>
+                            </div>
+                        </div>
+                        <a href="#" class="text-decoration-none text-muted position-relative">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-lg-none">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <div class="mobile_menu" data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+                            aria-controls="mobileMenu">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                    <!-- mobile menu -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu"
+                        aria-labelledby="mobileMenuLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body p-0">
+                            <div class="mobile-nav-wrapper shadow-sm border rounded">
+                                <nav>
+                                    <div class="nav nav-tabs nav-fill bg-light" id="nav-tab" role="tablist">
+                                        <button class="nav-link active fw-bold py-3 text-uppercase"
+                                            id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category"
+                                            type="button" role="tab">
+                                            <i class="fa-solid fa-list-ul me-2"></i>Categories
+                                        </button>
+                                        <button class="nav-link fw-bold py-3 text-uppercase" id="nav-menu-tab"
+                                            data-bs-toggle="tab" data-bs-target="#nav-menu" type="button" role="tab">
+                                            <i class="fa-solid fa-bars me-2"></i>Menu
+                                        </button>
+                                    </div>
+                                </nav>
+
+                                <div class="tab-content bg-white" id="nav-tabContent">
+                                    <div class="tab-pane fade show active mobile-nav-wrapper" id="nav-category"
+                                        role="tabpanel">
+                                        <ul class="list-unstyled mb-0 category-list">
+
+                                            <li class="category-item border-bottom">
+                                                <div class="category-header d-flex justify-content-between align-items-center p-3"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-travel-1"
+                                                    aria-expanded="false" style="cursor: pointer;">
+                                                    <span class="d-flex align-items-center fw-medium">
+                                                        <i
+                                                            class="fa-solid fa-person-walking-luggage me-3 text-danger fs-5"></i>
+                                                        Travel Bags
+                                                    </span>
+                                                    <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                                                </div>
+
+                                                <div class="collapse" id="sub-travel-1" data-bs-parent="#nav-category">
+                                                    <ul class="list-unstyled sub-category-list bg-light">
+                                                        <li><a href="#" class="sub-link">Trolley Bags</a></li>
+                                                        <li><a href="#" class="sub-link">Backpacks</a></li>
+                                                        <li><a href="#" class="sub-link">Duffle Bags</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                            <li class="category-item border-bottom">
+                                                <div class="category-header d-flex justify-content-between align-items-center p-3"
+                                                    data-bs-toggle="collapse" data-bs-target="#sub-office-2"
+                                                    aria-expanded="false" style="cursor: pointer;">
+                                                    <span class="d-flex align-items-center fw-medium">
+                                                        <i class="fa-solid fa-briefcase me-3 text-danger fs-5"></i>
+                                                        Office Bags
+                                                    </span>
+                                                    <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                                                </div>
+
+                                                <div class="collapse" id="sub-office-2" data-bs-parent="#nav-category">
+                                                    <ul class="list-unstyled sub-category-list bg-light">
+                                                        <li><a href="#" class="sub-link">Laptop Bags</a></li>
+                                                        <li><a href="#" class="sub-link">Messenger Bags</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="nav-menu" role="tabpanel">
+                                        <ul class="list-unstyled mb-0 main-menu-list">
+                                            <li><a href="#"><i class="fa-solid fa-house me-3"></i> Home</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-bolt me-3"></i> Campaigns</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-shop me-3"></i> Shop</a></li>
+                                            <li><a href="#"><i class="fa-solid fa-envelope me-3"></i> Contact Us</a>
+                                            </li>
+                                            <li><a href="#"><i class="fa-solid fa-circle-info me-3"></i> About Us</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 text-center">
+                        <a href="index.html"><img src="images/logo.png" alt="Suitcase BD" class="img-fluid"></a>
+                    </div>
+                    <div class="col-3 text-end">
+                        <a href="#" class="text-decoration-none text-muted position-relative">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-header border-bottom  py-1 header-sticky">
+            <div class="container d-none d-lg-block">
+                <div class="navbar-grid">
+                    <div class="allCategory position-relative">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        All Categories
+                        <div class="category-dropdown-wrapper shadow-sm">
+                            <ul class="main-category-list list-unstyled mb-0">
+
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-link">
+                                        <span> Travel Bags</span>
+                                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                                    </a>
+
+                                    <div class="subcategory-panel shadow-sm">
+                                        <div class="sub-content">
+                                            <h6 class="sub-title">Popular Travel Bags</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Bagpacks</a></li>
+                                                <li><a href="#">New Arrival</a></li>
+                                                <li><a href="#">Fashion Bagpacks</a></li>
+                                                <li><a href="#">Official Bagpacks</a></li>
+                                                <li><a href="">Travel Bags</a></li>
+                                                <li><a href="">Cross Body</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="navbar">
+                        <ul class="d-flex justify-content-center align-items-center flex-wrap">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Campaigns</a></li>
+                            <li><a href="">Bagpacks</a></li>
+                            <li><a href="">New Arrival</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+            <div class="container d-lg-none">
+                <form action="" method="post">
+                    <div class="from-group">
+                        <input type="text" class="form-control" placeholder="Search for products, brands and more"
+                            aria-label="Search">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </header>
+    <main>
+        <div class="container shop-page-grid">
+            <div class="sidebar-column sticky-top" id="sidebarWrapper">
+                <div class="filter-sidebar-card">
+                    <div class="filter-box">
+                        <h6 class="filter-label">Filter by Price</h6>
+
+                        <div class="price-range-slider mb-3">
+                            <input type="range" class="custom-range-input" id="priceRange" min="0" max="10000"
+                                step="100" value="5000">
+                            <div class="d-flex justify-content-between mt-2">
+                                <span class="small text-muted">0 TK</span>
+                                <span class="small text-muted">10,000 TK</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="flex-fill">
+                                <label class="small text-muted mb-1">Min Price</label>
+                                <input type="number" class="form-control price-input shadow-none" id="minPrice"
+                                    placeholder="0">
+                            </div>
+                            <div class="mt-4 text-muted">-</div>
+                            <div class="flex-fill">
+                                <label class="small text-muted mb-1">Max Price</label>
+                                <input type="number" class="form-control price-input shadow-none" id="maxPrice"
+                                    placeholder="10000">
+                            </div>
+                        </div>
+
+                        <button class="btn price-filter-btn w-100 my-3" onclick="applyPriceFilter()">
+                            Apply Filter
+                        </button>
+                    </div>
+                    <div class="filter-box">
+                        <h6 class="filter-label">Filter by Brand</h6>
+                        <div class="checkbox-list d-flex flex-column">
+                            <label class="form-check-custom"><input type="checkbox" checked=""> <span>3W
+                                    CLINIC</span></label>
+                            <label class="form-check-custom"><input type="checkbox"> <span>NIVEA</span></label>
+                            <label class="form-check-custom"><input type="checkbox" checked=""> <span>3W
+                                    CLINIC</span></label>
+                            <label class="form-check-custom"><input type="checkbox"> <span>NIVEA</span></label>
+                            <label class="form-check-custom"><input type="checkbox" checked=""> <span>3W
+                                    CLINIC</span></label>
+                            <label class="form-check-custom"><input type="checkbox"> <span>NIVEA</span></label>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <h6 class="filter-label">Filter by Category</h6>
+                        <div class="checkbox-list d-flex flex-column">
+                            <label class="form-check-custom"><input type="checkbox" checked=""> <span>3W
+                                    CLINIC</span></label>
+                            <label class="form-check-custom"><input type="checkbox"> <span>NIVEA</span></label>
+                            <label class="form-check-custom"><input type="checkbox" checked=""> <span>3W
+                                    CLINIC</span></label>
+                            <label class="form-check-custom"><input type="checkbox"> <span>NIVEA</span></label>
+                            <label class="form-check-custom"><input type="checkbox" checked=""> <span>3W
+                                    CLINIC</span></label>
+                            <label class="form-check-custom"><input type="checkbox"> <span>NIVEA</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-md-none">
+                <button class="filter-toggle-btn" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-sliders"></i> Open Filters
+                </button>
+            </div>
+            <div class="row g-2 shop_page">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <a href="" class="single-product card ">
+                        <div class="overflow-hidden position-relative p-2">
+                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                -15%
+                            </span>
+                        </div>
+                        <div class="card-body text-center py-2">
+                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                            <div>
+                                <span class="text-danger fw-bold">৳ 999</span>
+                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <footer class="footer-section pt-5 pb-3 mt-5" style="background-color: #fff9f9; border-top: 1px solid #f2e1e1;">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo mb-3">
+                        <img src="images/logo.png" alt="Suitcase BD" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                    <p class="text-muted small lh-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique mauris ac luctus
+                        placerat. Aenean egestas nulla vulputate facilisis commodo.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 ps-lg-5">
+                    <h6 class="fw-bold mb-4 footer-title">Useful Links</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#" class="active">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 ps-lg-4">
+                    <h6 class="fw-bold mb-4 footer-title">Support</h6>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-danger me-3 mt-1"></i>
+                        <p class="small text-muted mb-0">Rahmat Manzil, 18/1/KA, Begumgonj, Narinda, Dhaka - 1100,
+                            Bangladesh</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-envelope text-danger me-3 mt-1"></i>
+                        <a href="mailto:suitcase.info.bd@gmail.com"
+                            class="small text-muted mb-0">suitcase.info.bd@gmail.com</a>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
+                        <a href="tel:+8801603580981" class="small text-muted mb-0">+8801603580981</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-md-end text-lg-start">
+                    <h6 class="fw-bold mb-4 footer-title">Stay in touch</h6>
+                    <div class="social-icons mb-4">
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-facebook fa-lg"
+                                style="color: #1877F2;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-twitter fa-lg"
+                                style="color: #1DA1F2;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-youtube fa-lg"
+                                style="color: #FF0000;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-linkedin fa-lg"
+                                style="color: #0A66C2;"></i></a>
+                        <a href="#" class="me-2 text-decoration-none"><i class="fab fa-instagram fa-lg"
+                                style="color: #C13584;"></i></a>
+                    </div>
+                    <div class="payment-methods">
+                        <img src="https://i.ibb.co/Vv9tmkv/mastercard.png" alt="Mastercard" class="me-2 mb-2"
+                            style="height: 30px;">
+                        <img src="https://i.ibb.co/6nd8XvS/visa.png" alt="Visa" class="me-2 mb-2" style="height: 30px;">
+                        <img src="https://i.ibb.co/Hq8T6v6/bkash.png" alt="bKash" class="mb-2"
+                            style="height: 30px; border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mt-5 mb-4 text-muted opacity-25">
+            <div class="row align-items-center pb-2">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">© 2026 All rights reserved by Suitcase BD</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-muted mb-0">Developed by <span class="fw-bold"> <a href=""
+                                target="_blank">Classic IT</a> </span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: "+8801644058109",
+                facebook: "YOUR_FACEBOOK_PAGE_ID",
+                call_to_action: "Message us",
+                button_color: "#FF6550",
+                position: "right",
+                order: "whatsapp,facebook",
+            };
+            var proto = "https:",
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = url + "/widget-send-button/js/init.js";
+            s.onload = function () {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName("script")[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+
+        setTimeout(() => {
+            try {
+                var x = document.querySelector("a[href*='getbutton.io']");
+                if (x) x.remove();
+            } catch (e) { }
+        }, 2000);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebarWrapper');
+            const overlay = document.getElementById('sidebarOverlay');
+
+            if (sidebar) {
+                sidebar.classList.toggle('show');
+            }
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
