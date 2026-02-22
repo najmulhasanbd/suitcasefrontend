@@ -98,14 +98,11 @@
     }
 
     @media (max-width: 991px) {
-
-        /* Ensure the sidebar is NOT hidden by display:none */
         .sidebar-column {
             display: block !important;
             position: fixed;
             top: 0;
             left: -320px;
-            /* Start off-screen */
             width: 300px;
             height: 100vh;
             background: #fff;
@@ -116,7 +113,6 @@
             box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
         }
 
-        /* When the 'show' class is added via JS */
         .sidebar-column.show {
             left: 0 !important;
         }
@@ -130,7 +126,6 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 10000;
             display: none;
-            /* Hidden by default */
         }
 
         .sidebar-overlay.active {
@@ -477,6 +472,7 @@
             </div>
         </section>
     </header>
+
     <main>
         <div class="container shop-page-grid">
             <div class="sidebar-column sticky-top" id="sidebarWrapper">
@@ -546,283 +542,294 @@
                     <i class="fa-solid fa-sliders"></i> Open Filters
                 </button>
             </div>
-            <div class="row g-2 shop_page">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
+            <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h6 class="mb-0 text-nowrap">Showing 11 products</h6>
+
+                    <select name="" class="form-select w-auto">
+                        <option value="">Low to High</option>
+                        <option value="">High to Low</option>
+                    </select>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                <div class="row g-2 shop_page">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <a href="" class="single-product card ">
-                        <div class="overflow-hidden position-relative p-2">
-                            <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
-                            <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
-                                -15%
-                            </span>
-                        </div>
-                        <div class="card-body text-center py-2">
-                            <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
-                            <div>
-                                <span class="text-danger fw-bold">৳ 999</span>
-                                <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
-                            <button class="btn btn-sm btn-outline-primary">Buy Now</button>
-                            <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
     <footer class="footer-section pt-5 pb-3 mt-5" style="background-color: #fff9f9; border-top: 1px solid #f2e1e1;">
