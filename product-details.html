@@ -71,12 +71,12 @@
     }
 
     .thumb_nav .item img.active {
-        border-color: #800020;
+        border-color: var(--primary-color);
         opacity: 1;
     }
 
     .thumb_nav .item img:hover {
-        border-color: #800020;
+        border-color: var(--primary-color);
     }
 
     .text-maroon {
@@ -714,8 +714,6 @@
                                 data-bs-target="#desc-pane">Description</button></li>
                         <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
                                 data-bs-target="#review-pane">Reviews</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-                                data-bs-target="#delivery-pane">Delivery & Return</button></li>
                     </ul>
 
                     <div class="tab-content border rounded p-4 bg-white shadow-sm" id="productTabContent">
@@ -770,62 +768,97 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="delivery-pane" role="tabpanel">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div class="bg-light p-3 rounded-circle me-3">
-                                                <i class="fas fa-truck text-maroon fs-4"></i>
-                                            </div>
-                                            <h5 class="fw-bold mb-0">Shipping Policy</h5>
-                                        </div>
-                                        <ul class="list-unstyled text-secondary small">
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Inside Dhaka:</strong> Delivery within 24-48 Hours.
-                                            </li>
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Outside Dhaka:</strong> Delivery within 3-5 Working Days.
-                                            </li>
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Shipping Charge:</strong> ৳60 inside Dhaka, ৳120 outside Dhaka.
-                                            </li>
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Order Tracking:</strong> You will receive a tracking ID via SMS.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                                <div class="col-md-6">
-                                    <div class="p-4 border rounded bg-white h-100 shadow-sm">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div class="bg-light p-3 rounded-circle me-3">
-                                                <i class="fas fa-undo-alt text-maroon fs-4"></i>
-                                            </div>
-                                            <h5 class="fw-bold mb-0">Return & Refund</h5>
-                                        </div>
-                                        <ul class="list-unstyled text-secondary small">
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>7 Days Return:</strong> If the product is defective or damaged.
-                                            </li>
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Condition:</strong> Product must be unused with original
-                                                packaging/tags.
-                                            </li>
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Refund Process:</strong> Refunds are processed within 5-7
-                                                working days.
-                                            </li>
-                                            <li class="mb-2"><i class="fas fa-dot-circle me-2 text-maroon"></i>
-                                                <strong>Support:</strong> Call our hotline for any return-related
-                                                queries.
-                                            </li>
-                                        </ul>
-                                    </div>
+        <div class="related-product">
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
                                 </div>
                             </div>
-                        </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <a href="" class="single-product card ">
+                            <div class="overflow-hidden position-relative p-2">
+                                <img src="images/product/1.png" alt="product image" class="card-img-top img-fluid">
+                                <span class="badge position-absolute top-0 start-0 bg-danger" style="z-index: 10;">
+                                    -15%
+                                </span>
+                            </div>
+                            <div class="card-body text-center py-2">
+                                <h6 class="card-title text-start">Commando Backpack For Traveling (CD05)</h6>
+                                <div>
+                                    <span class="text-danger fw-bold">৳ 999</span>
+                                    <span class="text-muted text-decoration-line-through">৳ 1,200</span>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-primary">Buy Now</button>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
