@@ -941,6 +941,136 @@ textarea {
 }
 
 /*-----------------------------------------------------------------------------------
+    7. offcanvas
+-----------------------------------------------------------------------------------*/
+/* Custom Sidebar Prefix: sb- */
+
+#offcanvasExample.sb-checkout-sidebar {
+    font-family: var(--family);
+    background-color: var(--body-bg);
+    width: 380px;
+
+    /* Animation & Transition Prefixes */
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.sb-checkout-sidebar .offcanvas-header {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.sb-checkout-sidebar .sb-cart-item img {
+    border: 1px solid var(--border-color);
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.sb-checkout-sidebar .offcanvas-footer {
+    background-color: var(--card-bg) !important;
+}
+
+/* Button Hover Effects with Prefixes */
+.sb-checkout-sidebar .btn-outline-dark:hover {
+    background-color: var(--dark-color);
+    color: #fff !important;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.sb-checkout-sidebar .btn-primary-custom {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.sb-checkout-sidebar .btn-primary-custom:hover {
+    -webkit-filter: brightness(1.2);
+    filter: brightness(1.2);
+}
+
+/* Scrollbar styling for Webkit browsers */
+.sb-checkout-sidebar .offcanvas-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sb-checkout-sidebar .offcanvas-body::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+/* Cart Item Layout */
+.gm-cart-item {
+    transition: var(--transition);
+    border-color: var(--border-color) !important;
+}
+
+
+/* Image Styling with Qty Badge */
+.cart-img-holder {
+    background: #fff;
+    min-width: 70px;
+}
+
+.qty-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-bottom-left-radius: 8px;
+    font-weight: bold;
+}
+
+.cart-item-title {
+    font-family: var(--family);
+    color: var(--text-heading);
+    font-size: 0.95rem;
+    text-align: start;
+    display: block;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow: visible;
+}
+
+.cart-item-price {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Remove Button Styling */
+.btn-remove-item {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-remove-item:hover {
+    background: rgba(255, 77, 77, 0.1);
+    transform: scale(1.1);
+}
+
+/* Scrollbar Styling for Cart */
+.offcanvas-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+/*-----------------------------------------------------------------------------------
     7. footer
 -----------------------------------------------------------------------------------*/
 .footer-section {
@@ -996,4 +1126,118 @@ textarea {
     text-align: center;
     border-radius: 50%;
     line-height: 34px;
+}
+
+
+/* home 2 */
+.section-title.home2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+.section-title.home2::after {
+    display: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: start;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.hero-category {
+    border-radius: 5px;
+}
+
+.hero-category {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: auto;
+    height: 371px;
+    overflow-y: scroll;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.hero-category .main-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-category .dropdown-toggle::after {
+    display: none;
+}
+
+.hero-category .main-nav>li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hero-category .main-nav>li>a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: normal;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.hero-category .main-nav>li>a:hover {
+    background: #f9f9f9;
+    color: var(--primary-color);
+}
+
+.hero-category .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #fdfdfd;
+    display: none;
+    border-left: 4px solid var(--primary-color);
+}
+
+.hero-category .submenu li a {
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.hero-category .submenu li a:hover {
+    color: var(--primary-color);
+    background: #f1f1f1;
+}
+
+.has-dropdown.active .fa-angle-down {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+.allCategory.index2:hover .category-dropdown-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none; 
+}
+
+.bottom-header.sticky .allCategory.index2:hover .category-dropdown-wrapper {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0);
+    pointer-events: auto !important; 
 }

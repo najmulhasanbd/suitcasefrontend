@@ -3,7 +3,11 @@
 -----------------------------------------------------------------------------------*/
 
 /* 1. Extra Large Desktop (1200px to 1500px) */
-@media (min-width: 1200px) and (max-width: 1500px) {}
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .hero-category {
+        height: 312px;
+    }
+}
 
 /* 2. Standard Desktop (992px to 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -14,6 +18,14 @@
     .navbar ul li a {
         padding: 5px;
     }
+
+    .hero-category {
+        display: none;
+    }
+
+    .hero-grid {
+        display: block;
+    }
 }
 
 /* 3. Tablet Device (768px to 991px) */
@@ -21,6 +33,14 @@
     .btn {
         padding: 5px 20px;
         width: 100%;
+    }
+
+    .hero-category {
+        display: none;
+    }
+
+    .hero-grid {
+        display: block;
     }
 }
 
@@ -34,11 +54,18 @@
         padding: 5px 20px;
         width: 100%;
     }
+
+    .hero-category {
+        display: none;
+    }
+
+    .hero-grid {
+        display: block;
+    }
 }
 
 /* 5. Small Mobile (Up to 479px) */
 @media (max-width: 479px) {
-
     .container {
         width: 100%;
         padding: 0 10px;
@@ -47,6 +74,18 @@
     .btn {
         padding: 5px 20px;
         width: 100%;
+    }
+
+    .hero-category {
+        display: none;
+    }
+
+    .hero-grid {
+        display: block;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
     }
 }
 
