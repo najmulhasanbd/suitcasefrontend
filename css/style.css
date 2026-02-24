@@ -559,18 +559,78 @@ textarea {
 /*-----------------------------------------------------------------------------------
     product
 -----------------------------------------------------------------------------------*/
+/* ১. বাটন ডিফল্ট স্টাইল */
+.buy-now-btn {
+    background-color: transparent !important;
+    color: #800020 !important;
+    border: 2px solid #800020 !important;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* ২. নিচ থেকে রঙ উঠে আসার ইফেক্ট (Pseudo Element) */
+.buy-now-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0; /* শুরুতে উচ্চতা ০ */
+    background-color: #800020;
+    transition: all 0.4s cubic-bezier(0.7, 0, 0.2, 1);
+    z-index: -1;
+}
+
+/* ৩. কার্ড হোভার হলে বাটনের পরিবর্তন */
+.single-product:hover .buy-now-btn {
+    color: #fff !important;
+    border-color: #800020 !important;
+    transform: translateY(-2px); /* হালকা উপরে উঠবে */
+}
+
+/* ৪. কার্ড হোভার হলে ব্যাকগ্রাউন্ড ফিল হওয়া */
+.single-product:hover .buy-now-btn::after {
+    height: 100%; /* নিচ থেকে পুরো বাটন পূর্ণ হবে */
+}
+
+/* ৫. আইকন এবং টেক্সট মুভমেন্ট অ্যানিমেশন */
+.icon-move {
+    display: inline-block;
+    transition: transform 0.4s ease;
+    transform: translateX(-5px);
+}
+
+.text-move {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.single-product:hover .icon-move {
+    transform: translateX(0) scale(1.2); /* আইকন ডানে এসে একটু বড় হবে */
+}
+
+.single-product:hover .text-move {
+    transform: translateX(5px); /* টেক্সট সামান্য ডানে সরবে */
+}
 .single-product {
-    border: 1px solid #eee;
     border-radius: 12px;
     background: #fff;
     text-decoration: none !important;
     position: relative;
     display: block;
+    border: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .single-product:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
     border-color: var(--primary-color);
 }
 
