@@ -42,6 +42,10 @@
     .hero-grid {
         display: block;
     }
+
+    .dashboard-area .main-dashboard {
+        padding-left: 0 !important;
+    }
 }
 
 /* 4. Large Mobile (480px to 767px) */
@@ -62,6 +66,19 @@
     .hero-grid {
         display: block;
     }
+
+    .dashboard-area {
+        display: block;
+    }
+
+    .dashboard-area {
+        display: block !important;
+    }
+
+    .dashboard-area .main-dashboard {
+        padding-left: 0 !important;
+        margin-top: 10px;
+    }
 }
 
 /* 5. Small Mobile (Up to 479px) */
@@ -71,10 +88,22 @@
         padding: 0 10px;
     }
 
-  .btn {
-    padding: 5px 0px;
-    width: 100%;
-}
+    .dashboard-area .single-panel {
+        padding: 10px;
+    }
+
+    .dashboard-area .main-dashboard {
+        padding-left: 0;
+    }
+
+    .btn {
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+    .dashboard-area {
+        display: block !important;
+    }
 
     .hero-category {
         display: none;
@@ -87,7 +116,24 @@
     .section-title h2 {
         font-size: 24px;
     }
+.dashboard-area .sidebar ul li {
+    border: 1px solid #ebebeb;
+}
 }
 
 /* 6. All Mobile Devices (Default for Mobile) */
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .dashboard-area .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dashboard-area .sidebar ul li a {
+        padding: 8px !important;
+    }
+
+    .dashboard-area .sidebar ul li a.active {
+        padding-left: 0;
+    }
+}
