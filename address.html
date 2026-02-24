@@ -391,58 +391,17 @@
             </div>
 
             <div class="main-dashboard">
-                <h3>Orders</h3>
-                <div class="orderlist">
-                    <div class="table-header-actions">
-                        <div class="search-box">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <button class="filter-btn">
-                            <i class="fa-solid fa-filter"></i> Filter
-                        </button>
-                    </div>
+                <h3>Billing Address</h3>
 
-                    <div class="table-responsive">
-                        <table class="table custom-order-table">
-                            <thead>
-                                <tr>
-                                    <th>Order ID <i class="fa-solid fa-sort"></i></th>
-                                    <th>Date <i class="fa-solid fa-sort"></i></th>
-                                    <th>Amount <i class="fa-solid fa-sort"></i></th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#012345</td>
-                                    <td>12/02/2026</td>
-                                    <td>1000 Tk</td>
-                                    <td><span class="status-badge in-transit">In Transit</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
-                                                class="fa-regular fa-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>#012345</td>
-                                    <td>12/02/2026</td>
-                                    <td>1000 Tk</td>
-                                    <td><span class="status-badge processing">Processing</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
-                                                class="fa-regular fa-eye"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>#012345</td>
-                                    <td>12/02/2026</td>
-                                    <td>1000 Tk</td>
-                                    <td><span class="status-badge delivered">Delivered</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
-                                                class="fa-regular fa-eye"></i></a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <form action="" method="POST" class="address-form">
+                    <div class="address-container">
+                        <textarea name="address" id="address" placeholder="Write your address"></textarea>
+                        <div class="button-wrapper">
+                            <button type="submit" class="btn-update">Update</button>
+                        </div>
                     </div>
-                </div>
+                </form>
+
             </div>
         </section>
     </main>
