@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Invoice</title>
+    <style>
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #444;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #800020; /* Primary Color */
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .invoice-header table {
+            width: 100%;
+        }
+        .invoice-header td {
+            vertical-align: top;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #800020;
+            text-transform: uppercase;
+        }
+        .title {
+            text-align: right;
+        }
+        .info-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .items-table th {
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+            text-align: left;
+        }
+        .items-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .total-section {
+            margin-top: 30px;
+            text-align: right;
+        }
+        .total-section table {
+            width: 250px;
+            margin-left: auto;
+        }
+        .total-section td {
+            padding: 5px 0;
+        }
+        .grand-total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #800020;
+        }
+        .footer-note {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            color: #7E7E7E;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-box">
+        <table style="width: 100%; border-bottom: 2px solid #800020; padding-bottom: 20px;">
+            <tr>
+                <td class="logo">BOYAN BD</td>
+                <td style="text-align: right;">
+                    <h2 style="margin:0; color:#444;">INVOICE</h2>
+                    <p style="margin:0;">Order ID: #BYN-99234</p>
+                    <p style="margin:0;">Date: 24 Feb, 2026</p>
+                </td>
+            </tr>
+        </table>
+
+        <table class="info-table" style="margin-top: 30px;">
+            <tr>
+                <td style="width: 50%;">
+                    <strong style="color: #4A4A4A;">Billed To:</strong><br>
+                    Customer Name<br>
+                    customer@email.com<br>
+                    +880 1XXX XXXXXX<br>
+                    Dhaka, Bangladesh
+                </td>
+                <td style="text-align: right;">
+                    <strong style="color: #4A4A4A;">Payment Method:</strong><br>
+                    Cash on Delivery<br>
+                    Status: <span style="color: #7DBA2F; font-weight: bold;">PAID</span>
+                </td>
+            </tr>
+        </table>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th style="text-align: right;">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wireless Headphone X1</td>
+                    <td>$50.00</td>
+                    <td>1</td>
+                    <td style="text-align: right;">$50.00</td>
+                </tr>
+                <tr>
+                    <td>Premium Audio Cable</td>
+                    <td>$10.00</td>
+                    <td>2</td>
+                    <td style="text-align: right;">$20.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-section">
+            <table>
+                <tr>
+                    <td>Subtotal:</td>
+                    <td>$70.00</td>
+                </tr>
+                <tr>
+                    <td>Shipping:</td>
+                    <td>$5.00</td>
+                </tr>
+                <tr class="grand-total">
+                    <td>Total:</td>
+                    <td>$75.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer-note">
+            <p>Thank you for shopping with Boyan BD!</p>
+            <p>If you have any questions about this invoice, please contact us at support@boyanbd.com</p>
+        </div>
+    </div>
+
+</body>
+</html>
