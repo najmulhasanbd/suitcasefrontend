@@ -42,10 +42,6 @@
     .hero-grid {
         display: block;
     }
-
-    .dashboard-area .main-dashboard {
-        padding-left: 0 !important;
-    }
 }
 
 /* 4. Large Mobile (480px to 767px) */
@@ -76,7 +72,6 @@
     }
 
     .dashboard-area .main-dashboard {
-        padding-left: 0 !important;
         margin-top: 10px;
     }
 }
@@ -92,9 +87,6 @@
         padding: 10px;
     }
 
-    .dashboard-area .main-dashboard {
-        padding-left: 0;
-    }
 
     .btn {
         padding: 5px 0px;

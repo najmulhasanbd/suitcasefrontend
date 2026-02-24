@@ -391,60 +391,55 @@
             </div>
 
             <div class="main-dashboard">
-                <h3>Dashboard</h3>
-                <h6>Hello <b>uttaraclassicit</b> (not uttaraclassicit? <a href="#" class="text-danger">Log out</a>)</h6>
-                <p>From your account dashboard you can view your recent orders, manage your shipping and billing
-                    addresses, and edit your password and account details.</p>
+                <h3>Orders</h3>
+               <div class="orderlist">
+    <div class="table-header-actions">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <button class="filter-btn">
+            <i class="fa-solid fa-filter"></i> Filter
+        </button>
+    </div>
 
-                <div class="row g-3">
-                    <div class="col-lg-4 col-md-6 col-6">
-                        <div class="single-panel">
-                            <i class="fa-solid fa-box-archive"></i>
-                            <h5>Orders</h5>
-                            <span>View order history</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-6">
-                        <div class="single-panel">
-                            <i class="fa-solid fa-truck-fast"></i>
-                            <h5>Track Order</h5>
-                            <span>Access your files</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-6">
-                        <div class="single-panel">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <h5>Address</h5>
-                            <span>Manage addresses</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-6">
-                        <div class="single-panel">
-                            <i class="fa-solid fa-user-gear"></i>
-                            <h5>Account Details</h5>
-                            <span>Update your info</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-6">
-                        <div class="single-panel">
-                            <i class="fa-solid fa-heart"></i>
-                            <h5>Wishlist</h5>
-                            <span>Saved items</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-6">
-                        <div class="single-panel">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <h5>Logout</h5>
-                            <span>Sign out securely</span>
-                        </div>
-                    </div>
-                </div>
+    <div class="table-responsive">
+        <table class="table custom-order-table">
+            <thead>
+                <tr>
+                    <th>Order ID <i class="fa-solid fa-sort"></i></th>
+                    <th>Date <i class="fa-solid fa-sort"></i></th>
+                    <th>Amount <i class="fa-solid fa-sort"></i></th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#012345</td>
+                    <td>12/02/2026</td>
+                    <td>1000 Tk</td>
+                    <td><span class="status-badge in-transit">In Transit</span></td>
+                    <td><a href="#" class="view-btn"><i class="fa-regular fa-eye"></i></a></td>
+                </tr>
+                <tr>
+                    <td>#012345</td>
+                    <td>12/02/2026</td>
+                    <td>1000 Tk</td>
+                    <td><span class="status-badge processing">Processing</span></td>
+                    <td><a href="#" class="view-btn"><i class="fa-regular fa-eye"></i></a></td>
+                </tr>
+                <tr>
+                    <td>#012345</td>
+                    <td>12/02/2026</td>
+                    <td>1000 Tk</td>
+                    <td><span class="status-badge delivered">Delivered</span></td>
+                    <td><a href="#" class="view-btn"><i class="fa-regular fa-eye"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
             </div>
         </section>
     </main>
