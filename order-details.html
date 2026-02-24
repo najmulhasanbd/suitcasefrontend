@@ -391,56 +391,53 @@
             </div>
 
             <div class="main-dashboard">
-                <h3>Orders</h3>
-                <div class="orderlist">
-                    <div class="table-header-actions">
-                        <div class="search-box">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <button class="filter-btn">
-                            <i class="fa-solid fa-filter"></i> Filter
-                        </button>
-                    </div>
-
+                <h3>Orders Details</h3>
+                <div class="order-details">
                     <div class="table-responsive">
-                        <table class="table custom-order-table">
+                        <table class="table details-table">
                             <thead>
                                 <tr>
-                                    <th>Order ID <i class="fa-solid fa-sort"></i></th>
-                                    <th>Date <i class="fa-solid fa-sort"></i></th>
-                                    <th>Amount <i class="fa-solid fa-sort"></i></th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th class="text-start">Product</th>
+                                    <th class="text-end">Total</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>#012345</td>
-                                    <td>12/02/2026</td>
-                                    <td>1000 Tk</td>
-                                    <td><span class="status-badge in-transit">In Transit</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
-                                                class="fa-regular fa-eye"></i></a></td>
+                                    <td>Brightening Herbal Body Massage Cream — 1 × 1</td>
+                                    <td class="text-end fw-bold theme-color">800 TK</td>
                                 </tr>
                                 <tr>
-                                    <td>#012345</td>
-                                    <td>12/02/2026</td>
-                                    <td>1000 Tk</td>
-                                    <td><span class="status-badge processing">Processing</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
-                                                class="fa-regular fa-eye"></i></a></td>
+                                    <td>Brightening Herbal Body Massage Cream — 1 × 1</td>
+                                    <td class="text-end fw-bold theme-color">800 TK</td>
                                 </tr>
                                 <tr>
-                                    <td>#012345</td>
-                                    <td>12/02/2026</td>
-                                    <td>1000 Tk</td>
-                                    <td><span class="status-badge delivered">Delivered</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
-                                                class="fa-regular fa-eye"></i></a></td>
+                                    <td>Brightening Herbal Body Massage Cream — 1 × 1</td>
+                                    <td class="text-end fw-bold theme-color">800 TK</td>
+                                </tr>
+                                <tr class="calc-row">
+                                    <td>Subtotal</td>
+                                    <td class="text-end fw-bold theme-color">2400 TK</td>
+                                </tr>
+                                <tr class="calc-row">
+                                    <td>Shipping</td>
+                                    <td class="text-end"><span class="shipping-note">(Inside Dhaka)</span> <span
+                                            class="fw-bold theme-color">80 TK</span></td>
+                                </tr>
+                                <tr class="calc-row total-row">
+                                    <td>Total</td>
+                                    <td class="text-end fw-bold theme-color">2480 TK</td>
+                                </tr>
+                                <tr class="calc-row">
+                                    <td>Payment method</td>
+                                    <td class="text-end">Cash on Delivery</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <div class="invoice-section">
+                        <h3>Invoice</h3>
+                        <a href="#" class="btn-download">Download invoice (PDF)</a>
                     </div>
                 </div>
             </div>

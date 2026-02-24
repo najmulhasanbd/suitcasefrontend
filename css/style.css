@@ -1395,7 +1395,7 @@ textarea {
 .dashboard-area .sidebar ul li a:hover,
 .dashboard-area .sidebar ul li a.active {
     background: #f8f8f8;
-    color: #800020;
+    color: var(--primary-color);
     padding-left: 35px;
 }
 
@@ -1440,12 +1440,12 @@ textarea {
 .dashboard-area .single-panel:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
-    border-color: #800020;
+    border-color: var(--primary-color);
 }
 
 .dashboard-area .single-panel i {
     font-size: 45px;
-    color: #800020;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -1467,7 +1467,7 @@ textarea {
     background: #fff;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Table Header Actions (Search & Filter) */
@@ -1576,5 +1576,247 @@ textarea {
 }
 
 .dashboard-area .view-btn:hover {
-    color: #800020; /* আপনার ম্যারুন থিম */
+    color: var(--primary-color);
+}
+
+/* order details */
+.dashboard-area .order-details {
+    margin-top: 20px;
+}
+
+.dashboard-area .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.dashboard-area .details-table thead th {
+    font-size: 18px;
+    color: #3b3b8b;
+    border-bottom: 2px solid #eee;
+    padding: 15px 0;
+    font-weight: 600;
+}
+
+.dashboard-area .details-table td {
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f1f1;
+    color: #555;
+    font-size: 15px;
+}
+
+.dashboard-area .theme-color {
+    color: #3b3b8b;
+}
+
+.dashboard-area .calc-row td {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dashboard-area .shipping-note {
+    font-size: 12px;
+    color: #888;
+    margin-right: 5px;
+}
+
+.dashboard-area .total-row td {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.dashboard-area .invoice-section {
+    margin-top: 50px;
+}
+
+.dashboard-area .invoice-section h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.dashboard-area .btn-download {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1.5px solid #a3a3d1;
+    background: transparent;
+    color: #3b3b8b;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.dashboard-area .btn-download:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.dashboard-area .text-end {
+    text-align: right;
+}
+
+.dashboard-area .text-start {
+    text-align: left;
+}
+
+.dashboard-area .fw-bold {
+    font-weight: 700;
+}
+
+/* order tracking */
+.dashboard-area .tracking-summary {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-area .summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dashboard-area .icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.dashboard-area .green-bg {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.dashboard-area .blue-bg {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.dashboard-area .purple-bg {
+    background: #f3e5f5;
+    color: #9c27b0;
+}
+
+.dashboard-area .text-indigo {
+    color: #3b3b8b;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Timeline Section */
+.dashboard-area .tracking-history-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.dashboard-area .tracking-history-card h3 {
+    font-size: 20px;
+    color: #3b3b8b;
+    margin-bottom: 30px;
+}
+
+.dashboard-area .timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+/* Vertical Line */
+.dashboard-area .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    height: 95%;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.dashboard-area .timeline-item {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 30px;
+}
+
+.dashboard-area .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    z-index: 2;
+}
+
+/* Active State Colors */
+.dashboard-area .timeline-item.active .timeline-marker {
+    background: #4caf50;
+    box-shadow: 0 0 0 2px #4caf50;
+}
+
+.dashboard-area .timeline-item.active::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    height: 100%;
+    width: 2px;
+    background: #4caf50;
+    z-index: 1;
+}
+
+.dashboard-area .timeline-item:last-child::after {
+    display: none;
+}
+
+.dashboard-area .timeline-content h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3b3b8b;
+    margin-bottom: 5px;
+}
+
+.dashboard-area .timeline-content p {
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: #555;
+}
+
+.dashboard-area .timeline-content small {
+    color: #999;
+}
+
+.dashboard-area .date {
+    font-size: 13px;
+    color: #666;
+}
+
+.summary-item p {
+    margin: 0 !important;
+}
+
+.dashboard-area .d-flex {
+    display: flex;
+}
+
+.dashboard-area .justify-content-between {
+    justify-content: space-between;
 }
