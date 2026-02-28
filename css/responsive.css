@@ -1,16 +1,12 @@
-/*-----------------------------------------------------------------------------------
-    Responsive Breakpoints
------------------------------------------------------------------------------------*/
-
-/* 1. Extra Large Desktop (1200px to 1500px) */
-@media (min-width: 1200px) and (max-width: 1400px) {
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
     .hero-category {
         height: 312px;
     }
 }
 
-/* 2. Standard Desktop (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
     .navbar-grid {
         gap: 10px;
     }
@@ -28,7 +24,7 @@
     }
 }
 
-/* 3. Tablet Device (768px to 991px) */
+/* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
     .btn {
         padding: 5px 20px;
@@ -44,23 +40,26 @@
     }
 }
 
-/* 4. Large Mobile (480px to 767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-    .container {
-        width: 450px;
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .section-title h2 {
+        font-size: 24px;
     }
 
-    .btn {
-        padding: 5px 20px;
-        width: 100%;
+    .feature-category {
+        padding: 5px 0 !important;
     }
 
-    .hero-category {
+    .feature-category-grid .owl-nav {
         display: none;
     }
 
-    .hero-grid {
-        display: block;
+    .section-title {
+        margin-bottom: 10px;
+    }
+
+    .single-product span.btn-content i {
+        display: none;
     }
 
     .dashboard-area {
@@ -74,47 +73,19 @@
     .dashboard-area .main-dashboard {
         margin-top: 10px;
     }
-}
-
-/* 5. Small Mobile (Up to 479px) */
-@media (max-width: 479px) {
-    .container {
-        width: 100%;
-        padding: 0 10px;
-    }
 
     .dashboard-area .single-panel {
         padding: 10px;
-    }
-
-
-    .btn {
-        padding: 5px 0px;
-        width: 100%;
     }
 
     .dashboard-area {
         display: block !important;
     }
 
-    .hero-category {
-        display: none;
+    .dashboard-area .sidebar ul li {
+        border: 1px solid #ebebeb;
     }
 
-    .hero-grid {
-        display: block;
-    }
-
-    .section-title h2 {
-        font-size: 24px;
-    }
-.dashboard-area .sidebar ul li {
-    border: 1px solid #ebebeb;
-}
-}
-
-/* 6. All Mobile Devices (Default for Mobile) */
-@media (max-width: 767px) {
     .dashboard-area .sidebar ul {
         display: flex;
         flex-wrap: wrap;
@@ -128,4 +99,63 @@
     .dashboard-area .sidebar ul li a.active {
         padding-left: 0;
     }
+
+    .single-product h6 {
+        font-size: 12px;
+        margin: 0;
+        height: 30px;
+    }
+
+    .single-product span {
+        font-size: 15px;
+    }
+    .shop_page button {
+	padding: 5px !important;
+	font-size: 10px;
+}
+.single-product .btn.buy-now-btn {
+	padding: 0;
+	line-height: 1;
+	border: 1px solid !important;
+	border-radius: 5px;
+}
+.single-product .btn.buy-now-btn span.btn-content span {
+	font-size: 12px;
+}
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 450px;
+    }
+
+    .hero-category {
+        display: none;
+    }
+
+    .hero-grid {
+        display: block;
+    }
+
+
+    .hero-category {
+        display: none;
+    }
+
+    .hero-grid {
+        display: block;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+
+
+    .btn-track {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
 }
