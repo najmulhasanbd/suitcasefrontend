@@ -219,7 +219,8 @@
 
     .feature-category.py-5,
     .backpack-area.arrival-area.py-5,
-    .arrival-area.py-5 {
+    .arrival-area.py-5,
+    .ez-cart-container.py-5 {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
     }
@@ -259,9 +260,10 @@
     .card.border-0.shadow-sm.p-4.h-100.rounded-3 {
         padding: 10px !important;
     }
+
     .ez-card.p-4.shadow-sm.border.rounded-3.bg-white {
-	padding: 10px !important;
-}
+        padding: 10px !important;
+    }
 }
 
 /* Large Mobile :480px. */
