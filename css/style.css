@@ -619,8 +619,9 @@ textarea {
   transform: translateX(0) scale(1.2);
 }
 
-.single-product:hover .text-move {
-  transform: translateX(5px);
+.single-product:hover .btn-content {
+    transform: translateX(5px);
+    color: #fff !important;
 }
 
 .single-product {
