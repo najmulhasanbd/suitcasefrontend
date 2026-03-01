@@ -694,7 +694,7 @@ textarea {
 -----------------------------------------------------------------------------------*/
 .ez-cart-container {
   background-color: #f8f9fa;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--family);
 }
 
 .ez-cart-container .table thead th {
@@ -1081,7 +1081,7 @@ textarea {
     15. footer
 -----------------------------------------------------------------------------------*/
 .footer-section {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--family);
 }
 
 .footer-title {
