@@ -26,7 +26,7 @@
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
-    .btn {
+    /* .btn {
         padding: 5px 20px;
         width: 100%;
     }
@@ -37,12 +37,16 @@
 
     .hero-grid {
         display: block;
-    }
+    } */
+     .shop-page-grid {
+	display: block;
+}
 }
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-    .section-title h2 {
+
+    /* .section-title h2 {
         font-size: 24px;
     }
 
@@ -109,19 +113,52 @@
     .single-product span {
         font-size: 15px;
     }
+
     .shop_page button {
-	padding: 5px !important;
-	font-size: 10px;
-}
-.single-product .btn.buy-now-btn {
-	padding: 0;
-	line-height: 1;
-	border: 1px solid !important;
-	border-radius: 5px;
-}
-.single-product .btn.buy-now-btn span.btn-content span {
-	font-size: 12px;
-}
+        padding: 5px !important;
+        font-size: 10px;
+    }
+
+    .single-product .btn.buy-now-btn {
+        padding: 0;
+        line-height: 1;
+        border: 1px solid !important;
+        border-radius: 5px;
+    }
+
+    .single-product .btn.buy-now-btn span.btn-content span {
+        font-size: 12px;
+    }
+
+    .single-product .card-footer {
+        padding: 0;
+        padding-bottom: 10px;
+    } */
+    .single-product .card-body {
+        padding: 5px;
+    }
+
+    .single-product h6 {
+        font-size: 12px;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+
+    .single-product .card-body span {
+        font-size: 15px;
+    }
+
+    .single-product .card-footer {
+        padding: 0;
+        gap: 3px !important;
+    }
+
+    .single-product .card-footer button {
+        border-radius: 0;
+        line-height: 1;
+        font-size: 12px;
+        width: 100%;
+    }
 }
 
 /* Large Mobile :480px. */
@@ -130,7 +167,11 @@
         width: 450px;
     }
 
-    .hero-category {
+    .single-product .card-footer button {
+        width: auto;
+    }
+
+    /* .hero-category {
         display: none;
     }
 
@@ -151,11 +192,9 @@
         font-size: 24px;
     }
 
-
-
     .btn-track {
         margin-left: 0;
         margin-top: 10px;
-    }
+    } */
 
 }
