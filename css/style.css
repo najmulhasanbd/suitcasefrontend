@@ -1736,6 +1736,9 @@ textarea {
   color: #999;
 }
 
+    .dashboard-area .timeline-item:last-child {
+        margin: 0;
+    }
 .dashboard-area .date {
   font-size: 13px;
   color: #666;
