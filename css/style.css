@@ -758,7 +758,7 @@ textarea {
 
   .table-responsive tr {
     border: 1px solid #eee;
-    border-radius: 12px;
+    border-radius: 5px;
     margin-bottom: 15px;
     padding: 5px;
     background: #fff;
@@ -832,6 +832,7 @@ textarea {
   .table-responsive td:last-child {
     justify-content: flex-end;
     padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 
