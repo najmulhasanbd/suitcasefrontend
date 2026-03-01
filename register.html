@@ -1,1215 +1,803 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Classic IT</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-<style>
-        /* * 1. Theme Variables
-         * CSS variables defined by the user
-         */
-        :root {
-            --primary-color: #004D2B;
-            --secondary-color: #7dba2f;
-            --success-color: #7dba2f;
-            --dark-color: #020101;
-            --family: "Roboto", sans-serif;
-            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Classic IT</title>
 
-            /* Fixed Light Mode Only */
-            --body-bg: #ffffff;
-            --text-main: #7e7e7e;
-            --text-heading: #4a4a4a;
-            --border-color: #eeeeee;
-            --card-bg: #f8f9fa;
-        }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .register-card {
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background-color: var(--body-bg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
 
-        /* * 2. Global Styles
-         * Applying variables to the overall page
-         */
-        body {
-            font-family: var(--family);
-            background-color: var(--body-bg);
-            color: var(--text-main);
-            min-height: 100vh;
-        }
+    .register-card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    }
 
-        h1, h2, h3, h4, h5, h6, .card-title {
-            color: var(--text-heading);
-            font-weight: 700;
-        }
+    .form-control {
+      border: none;
+      border-bottom: 2px solid var(--border-color);
+      border-radius: 0;
+      color: var(--dark-color);
+      font-size: 1rem;
+      padding: 1rem 0;
+      transition: var(--transition);
+    }
 
-        /* * 3. Utility Classes & Customizations
-         * Styling elements to match the theme
-         */
-        
-        /* Modern, centered card with a slight shadow */
-        .register-card {
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background-color: var(--body-bg);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
+    .form-control:focus {
+      color: var(--dark-color);
+      background-color: transparent;
+      border-color: var(--primary-color);
+      outline: 0;
+      box-shadow: none;
+    }
 
-        .register-card:hover {
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-        }
+    .form-label {
+      color: var(--text-main);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
 
-        /* Input fields: minimal, bottom line only, theme colors */
-        .form-control {
-            border: none;
-            border-bottom: 2px solid var(--border-color);
-            border-radius: 0;
-            color: var(--dark-color);
-            font-size: 1rem;
-            padding: 1rem 0;
-            transition: var(--transition);
-        }
+    .form-floating>.form-control:focus~label,
+    .form-floating>.form-control:not(:placeholder-shown)~label {
+      color: var(--primary-color);
+      opacity: 1;
+    }
 
-        .form-control:focus {
-            color: var(--dark-color);
-            background-color: transparent;
-            border-color: var(--primary-color);
-            outline: 0;
-            box-shadow: none;
-        }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      transition: var(--transition);
+    }
 
-        .form-label {
-            color: var(--text-main);
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      color: var(--dark-color);
+    }
 
-        /* Input field floating labels (optional) */
-        .form-floating > .form-control:focus ~ label,
-        .form-floating > .form-control:not(:placeholder-shown) ~ label {
-          color: var(--primary-color);
-          opacity: 1;
-        }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
 
-        /* Modern, solid color primary button */
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            border-radius: 8px;
-            color: #ffffff;
-            font-weight: 700;
-            padding: 0.75rem 1.5rem;
-            transition: var(--transition);
-        }
+    a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+  </style>
+</head>
 
-        .btn-primary:hover, .btn-primary:focus {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            color: var(--dark-color);
-        }
-
-        /* Links using the primary color */
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-        }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <section class="top-bar border-bottom py-2">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-4 text-center text-md-start d-none d-md-block">
-              <small class="text-muted">Welcome you toClassic IT</small>
+<body>
+  <header>
+    <section class="top-bar border-bottom py-2">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center text-md-start d-none d-md-block">
+            <small class="text-muted">Welcome you toClassic IT</small>
+          </div>
+          <div class="col-md-4 text-center">
+            <small class="text-success fw-bold d-flex align-items-center justify-content-center">
+              <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop()"
+                onmouseout="this.start()">
+                <span style="margin-right: 50px">🚀 100% Secure delivery 1</span>
+                <span style="margin-right: 50px">🔒 100% Secure delivery 2</span>
+                <span style="margin-right: 50px">📦 100% Secure delivery 3</span>
+              </marquee>
+            </small>
+          </div>
+          <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+            <div class="dropdown me-3">
+              <a class="text-decoration-none text-muted small" href="#">Help</a>
             </div>
-            <div class="col-md-4 text-center">
-              <small
-                class="text-success fw-bold d-flex align-items-center justify-content-center"
-              >
-                <marquee
-                  behavior="scroll"
-                  direction="left"
-                  scrollamount="5"
-                  onmouseover="this.stop()"
-                  onmouseout="this.start()"
-                >
-                  <span style="margin-right: 50px"
-                    >🚀 100% Secure delivery 1</span
-                  >
-                  <span style="margin-right: 50px"
-                    >🔒 100% Secure delivery 2</span
-                  >
-                  <span style="margin-right: 50px"
-                    >📦 100% Secure delivery 3</span
-                  >
-                </marquee>
-              </small>
-            </div>
-            <div
-              class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
-            >
-              <div class="dropdown me-3">
-                <a class="text-decoration-none text-muted small" href="#"
-                  >Help</a
-                >
-              </div>
 
-              <div class="dropdown me-3">
-                <a
-                  class="text-decoration-none text-muted small dropdown-toggle"
-                  href="#"
-                  role="button"
-                  id="languageDropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://flagcdn.com/w20/gb.png"
-                    class="me-1"
-                    alt="English"
-                  />
-                  English
-                </a>
-                <ul
-                  class="dropdown-menu dropdown-menu-end shadow-sm border-0"
-                  aria-labelledby="languageDropdown"
-                >
-                  <li>
-                    <a
-                      class="dropdown-item small d-flex align-items-center"
-                      href="#"
-                    >
-                      <img
-                        src="https://flagcdn.com/w20/gb.png"
-                        class="me-2"
-                        alt="English"
-                      />
-                      English
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item small d-flex align-items-center"
-                      href="#"
-                    >
-                      <img
-                        src="https://flagcdn.com/w20/bd.png"
-                        class="me-2"
-                        alt="Bangla"
-                      />
-                      Bangla
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <a
-                href="#"
-                class="btn btn-warning btn-sm fw-bold px-3 d-none d-lg-block text-dark header__account"
-                >Account</a
-              >
+            <div class="dropdown me-3">
+              <a class="text-decoration-none text-muted small dropdown-toggle" href="#" role="button"
+                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://flagcdn.com/w20/gb.png" class="me-1" alt="English" />
+                English
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="languageDropdown">
+                <li>
+                  <a class="dropdown-item small d-flex align-items-center" href="#">
+                    <img src="https://flagcdn.com/w20/gb.png" class="me-2" alt="English" />
+                    English
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item small d-flex align-items-center" href="#">
+                    <img src="https://flagcdn.com/w20/bd.png" class="me-2" alt="Bangla" />
+                    Bangla
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <a href="#"
+              class="btn btn-warning btn-sm fw-bold px-3 d-none d-lg-block text-dark header__account">Account</a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="middle-header border-bottom py-2">
-        <div class="container d-none d-lg-block">
-          <div class="row align-items-center">
-            <div class="col-lg-3 col-md-3 col-6">
-              <div class="logo">
-                <a href="index.html">
-                  <img
-                    src="images/logo.webp"
-                    alt="Classic IT"
-                    class="img-fluid"
-                    style="max-height: 50px"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-              <form action="" method="post">
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search for products, brands and more"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-secondary" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div
-              class="col-lg-3 col-md-3 col-6 text-end d-flex align-items-center justify-content-end"
-            >
-              <div class="d-flex align-items-center me-3 p-2 rounded shadow-sm">
-                <div
-                  class="bg-light rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
-                  style="width: 40px; height: 40px"
-                >
-                  <i class="fas fa-phone-alt text-danger"></i>
-                </div>
-                <div class="lh-1">
-                  <small
-                    class="text-start text-muted d-block"
-                    style="font-size: 11px"
-                    >Need help? Call us</small
-                  >
-                  <strong style="color: var(--primary-color)"
-                    >01403714757</strong
-                  >
-                </div>
-              </div>
-              <div class="dropdown">
-                <a
-                  class="text-decoration-none text-muted position-relative cartDropdown"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  data-bs-auto-close="outside"
-                >
-                  <i class="fas fa-shopping-cart fa-lg"></i>
-                  <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                  >
-                    3
-                  </span>
-                </a>
-
-                <div class="cart-overlay"></div>
-
-                <div
-                  class="dropdown-menu dropdown-menu-end shadow border-0 p-3"
-                  aria-labelledby="cartDropdown"
-                  style="width: 350px; border-radius: 12px"
-                >
-                  <h6 class="border-bottom pb-2 mb-3 fw-bold text-muted">
-                    There are 3 Items in your bag
-                  </h6>
-
-                  <div class="cart-items-list">
-                    <div
-                      class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light"
-                    >
-                      <div
-                        class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm"
-                      >
-                        <a
-                          href="#"
-                          class="quantity__plus text-decoration-none text-dark px-1 mb-1"
-                          style="font-size: 10px; line-height: 1"
-                          ><i class="fa fa-plus"></i
-                        ></a>
-                        <input
-                          type="text"
-                          class="quantity__input border-0 text-center fw-bold bg-transparent p-0"
-                          value="1"
-                          readonly
-                          style="width: 20px; font-size: 12px"
-                        />
-                        <a
-                          href="#"
-                          class="quantity__minus text-decoration-none text-dark px-1 mt-1"
-                          style="font-size: 10px; line-height: 1"
-                          ><i class="fa fa-minus"></i
-                        ></a>
-                      </div>
-                      <div class="product-img">
-                        <img
-                          src="images/product/1.png"
-                          alt="Bag"
-                          class="rounded"
-                          style="width: 60px; height: 60px; object-fit: cover"
-                        />
-                      </div>
-                      <div class="product-info flex-grow-1">
-                        <h6
-                          class="mb-0 fw-bold text-dark"
-                          style="font-size: 13px"
-                        >
-                          Commando Backpack (CDB01)
-                        </h6>
-                        <small
-                          class="text-muted d-block"
-                          style="font-size: 11px"
-                          >৳ 1499/ Per Item</small
-                        >
-                        <span
-                          class="fw-bold text-danger"
-                          style="font-size: 13px"
-                          >Total: ৳ 1499.00</span
-                        >
-                      </div>
-                      <div>
-                        <a href="#" class="text-danger opacity-50"
-                          ><i class="fa fa-trash-o fs-5"></i
-                        ></a>
-                      </div>
-                    </div>
-
-                    <div
-                      class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light"
-                    >
-                      <div
-                        class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm"
-                      >
-                        <a
-                          href="#"
-                          class="quantity__plus text-decoration-none text-dark px-1 mb-1"
-                          style="font-size: 10px"
-                          ><i class="fa fa-plus"></i
-                        ></a>
-                        <input
-                          type="text"
-                          class="quantity__input border-0 text-center fw-bold bg-transparent p-0"
-                          value="1"
-                          readonly
-                          style="width: 20px; font-size: 12px"
-                        />
-                        <a
-                          href="#"
-                          class="quantity__minus text-decoration-none text-dark px-1 mt-1"
-                          style="font-size: 10px"
-                          ><i class="fa fa-minus"></i
-                        ></a>
-                      </div>
-                      <div class="product-img">
-                        <img
-                          src="images/product/1.png"
-                          alt="Bag"
-                          class="rounded"
-                          style="width: 60px; height: 60px; object-fit: cover"
-                        />
-                      </div>
-                      <div class="product-info flex-grow-1">
-                        <h6
-                          class="mb-0 fw-bold text-dark"
-                          style="font-size: 13px"
-                        >
-                          Commando Backpack (CD05)
-                        </h6>
-                        <small
-                          class="text-muted d-block"
-                          style="font-size: 11px"
-                          >৳ 1599/ Per Item</small
-                        >
-                        <span
-                          class="fw-bold text-danger"
-                          style="font-size: 13px"
-                          >Total: ৳ 1599.00</span
-                        >
-                      </div>
-                      <div>
-                        <a href="#" class="text-danger opacity-50"
-                          ><i class="fa fa-trash-o fs-5"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="cart-footer mt-3">
-                    <div
-                      class="d-flex justify-content-between align-items-center mb-3"
-                    >
-                      <span class="fw-bold text-muted">Subtotal:</span>
-                      <span class="fw-bold text-danger fs-5">৳ 3098.00</span>
-                    </div>
-                    <div class="d-grid gap-2 d-flex">
-                      <a
-                        href="#"
-                        class="btn btn-outline-danger w-100 fw-bold py-2"
-                        style="font-size: 13px"
-                        >VIEW CART</a
-                      >
-                      <a
-                        href="#"
-                        class="btn btn-danger w-100 fw-bold py-2"
-                        style="font-size: 13px"
-                        >CHECKOUT</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <section class="middle-header border-bottom py-2">
+      <div class="container d-none d-lg-block">
+        <div class="row align-items-center">
+          <div class="col-lg-3 col-md-3 col-6">
+            <div class="logo">
+              <a href="index.html">
+                <img src="images/logo.webp" alt="Classic IT" class="img-fluid" style="max-height: 50px" />
+              </a>
             </div>
           </div>
-        </div>
-        <div class="container d-lg-none">
-          <div class="row align-items-center">
-            <div class="col-3">
-              <div
-                class="mobile_menu"
-                data-bs-toggle="offcanvas"
-                href="#mobileMenu"
-                role="button"
-                aria-controls="mobileMenu"
-              >
-                <i class="fa fa-bars"></i>
+          <div class="col-lg-6 col-md-6">
+            <form action="" method="post">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for products, brands and more"
+                  aria-label="Search" />
+                <button class="btn btn-outline-secondary" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3 col-md-3 col-6 text-end d-flex align-items-center justify-content-end">
+            <div class="d-flex align-items-center me-3 p-2 rounded shadow-sm">
+              <div class="bg-light rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px">
+                <i class="fas fa-phone-alt text-danger"></i>
+              </div>
+              <div class="lh-1">
+                <small class="text-start text-muted d-block" style="font-size: 11px">Need help? Call us</small>
+                <strong style="color: var(--primary-color)">01403714757</strong>
               </div>
             </div>
-            <!-- mobile menu -->
-            <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id="mobileMenu"
-              aria-labelledby="mobileMenuLabel"
-            >
-              <div class="offcanvas-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body p-0">
-                <div class="mobile-nav-wrapper shadow-sm border rounded">
-                  <nav>
-                    <div
-                      class="nav nav-tabs nav-fill bg-light"
-                      id="nav-tab"
-                      role="tablist"
-                    >
-                      <button
-                        class="nav-link active fw-bold py-3 text-uppercase"
-                        id="nav-category-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#nav-category"
-                        type="button"
-                        role="tab"
-                      >
-                        <i class="fa-solid fa-list-ul me-2"></i>Categories
-                      </button>
-                      <button
-                        class="nav-link fw-bold py-3 text-uppercase"
-                        id="nav-menu-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#nav-menu"
-                        type="button"
-                        role="tab"
-                      >
-                        <i class="fa-solid fa-bars me-2"></i>Menu
-                      </button>
-                    </div>
-                  </nav>
-
-                  <div class="tab-content bg-white" id="nav-tabContent">
-                    <div
-                      class="tab-pane fade show active mobile-nav-wrapper"
-                      id="nav-category"
-                      role="tabpanel"
-                    >
-                      <ul class="list-unstyled mb-0 category-list">
-                        <li class="category-item border-bottom">
-                          <div
-                            class="category-header d-flex justify-content-between align-items-center p-3"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#sub-travel-1"
-                            aria-expanded="false"
-                            style="cursor: pointer"
-                          >
-                            <span class="d-flex align-items-center fw-medium">
-                              <i
-                                class="fa-solid fa-person-walking-luggage me-3 text-danger fs-5"
-                              ></i>
-                              Travel Bags
-                            </span>
-                            <i
-                              class="fa-solid fa-chevron-down arrow-icon small text-muted"
-                            ></i>
-                          </div>
-
-                          <div
-                            class="collapse"
-                            id="sub-travel-1"
-                            data-bs-parent="#nav-category"
-                          >
-                            <ul
-                              class="list-unstyled sub-category-list bg-light"
-                            >
-                              <li>
-                                <a href="#" class="sub-link">Trolley Bags</a>
-                              </li>
-                              <li>
-                                <a href="#" class="sub-link">Backpacks</a>
-                              </li>
-                              <li>
-                                <a href="#" class="sub-link">Duffle Bags</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-
-                        <li class="category-item border-bottom">
-                          <div
-                            class="category-header d-flex justify-content-between align-items-center p-3"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#sub-office-2"
-                            aria-expanded="false"
-                            style="cursor: pointer"
-                          >
-                            <span class="d-flex align-items-center fw-medium">
-                              <i
-                                class="fa-solid fa-briefcase me-3 text-danger fs-5"
-                              ></i>
-                              Office Bags
-                            </span>
-                            <i
-                              class="fa-solid fa-chevron-down arrow-icon small text-muted"
-                            ></i>
-                          </div>
-
-                          <div
-                            class="collapse"
-                            id="sub-office-2"
-                            data-bs-parent="#nav-category"
-                          >
-                            <ul
-                              class="list-unstyled sub-category-list bg-light"
-                            >
-                              <li>
-                                <a href="#" class="sub-link">Laptop Bags</a>
-                              </li>
-                              <li>
-                                <a href="#" class="sub-link">Messenger Bags</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="tab-pane fade" id="nav-menu" role="tabpanel">
-                      <ul class="list-unstyled mb-0 main-menu-list">
-                        <li>
-                          <a href="#"
-                            ><i class="fa-solid fa-house me-3"></i> Home</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            ><i class="fa-solid fa-bolt me-3"></i> Campaigns</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            ><i class="fa-solid fa-shop me-3"></i> Shop</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            ><i class="fa-solid fa-envelope me-3"></i> Contact
-                            Us</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            ><i class="fa-solid fa-circle-info me-3"></i> About
-                            Us</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-6 text-center">
-              <a href="index.html"
-                ><img src="images/logo.webp" alt="Classic IT" class="img-fluid"
-              /></a>
-            </div>
-
-            <div class="col-3 text-center">
-              <a
-                class="text-decoration-none text-muted position-relative"
-                data-bs-toggle="offcanvas"
-                href="#cartOffcanvas"
-                role="button"
-                aria-controls="cartOffcanvas"
-              >
+            <div class="dropdown">
+              <a class="text-decoration-none text-muted position-relative cartDropdown" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                 <i class="fas fa-shopping-cart fa-lg"></i>
-                <span
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                >
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   3
                 </span>
               </a>
-            </div>
 
-            <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="cartOffcanvas"
-              aria-labelledby="cartOffcanvasLabel"
-            >
-              <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title fw-bold" id="cartOffcanvasLabel">
-                  Your Shopping Bag
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close text-reset"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
+              <div class="cart-overlay"></div>
 
-              <div class="offcanvas-body">
+              <div class="dropdown-menu dropdown-menu-end shadow border-0 p-3" aria-labelledby="cartDropdown"
+                style="width: 350px; border-radius: 12px">
                 <h6 class="border-bottom pb-2 mb-3 fw-bold text-muted">
                   There are 3 Items in your bag
                 </h6>
 
-                <div class="cart-items-list mobile_cart">
-                  <div
-                    class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light"
-                  >
-                    <div
-                      class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm"
-                    >
-                      <a
-                        href="#"
-                        class="quantity__plus text-decoration-none text-dark px-1 mb-1"
-                        style="font-size: 10px; line-height: 1"
-                        ><i class="fa fa-plus"></i
-                      ></a>
-                      <input
-                        type="text"
-                        class="quantity__input border-0 text-center fw-bold bg-transparent p-0"
-                        value="1"
-                        readonly
-                        style="width: 20px; font-size: 12px"
-                      />
-                      <a
-                        href="#"
-                        class="quantity__minus text-decoration-none text-dark px-1 mt-1"
-                        style="font-size: 10px; line-height: 1"
-                        ><i class="fa fa-minus"></i
-                      ></a>
+                <div class="cart-items-list">
+                  <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light">
+                    <div class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm">
+                      <a href="#" class="quantity__plus text-decoration-none text-dark px-1 mb-1"
+                        style="font-size: 10px; line-height: 1"><i class="fa fa-plus"></i></a>
+                      <input type="text" class="quantity__input border-0 text-center fw-bold bg-transparent p-0"
+                        value="1" readonly style="width: 20px; font-size: 12px" />
+                      <a href="#" class="quantity__minus text-decoration-none text-dark px-1 mt-1"
+                        style="font-size: 10px; line-height: 1"><i class="fa fa-minus"></i></a>
                     </div>
                     <div class="product-img">
-                      <img
-                        src="images/product/1.png"
-                        alt="Bag"
-                        class="rounded"
-                        style="width: 60px; height: 60px; object-fit: cover"
-                      />
+                      <img src="images/product/1.png" alt="Bag" class="rounded"
+                        style="width: 60px; height: 60px; object-fit: cover" />
                     </div>
                     <div class="product-info flex-grow-1">
-                      <h6
-                        class="mb-0 fw-bold text-dark"
-                        style="font-size: 13px"
-                      >
+                      <h6 class="mb-0 fw-bold text-dark" style="font-size: 13px">
                         Commando Backpack (CDB01)
                       </h6>
-                      <small class="text-muted d-block" style="font-size: 11px"
-                        >৳ 1499/ Per Item</small
-                      >
-                      <span class="fw-bold text-danger" style="font-size: 13px"
-                        >Total: ৳ 1499.00</span
-                      >
+                      <small class="text-muted d-block" style="font-size: 11px">৳ 1499/ Per Item</small>
+                      <span class="fw-bold text-danger" style="font-size: 13px">Total: ৳ 1499.00</span>
                     </div>
                     <div>
-                      <a href="#" class="text-danger opacity-50"
-                        ><i class="fa fa-trash-o fs-5"></i
-                      ></a>
+                      <a href="#" class="text-danger opacity-50"><i class="fa fa-trash-o fs-5"></i></a>
                     </div>
                   </div>
 
-                  <div
-                    class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light"
-                  >
-                    <div
-                      class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm"
-                    >
-                      <a
-                        href="#"
-                        class="quantity__plus text-decoration-none text-dark px-1 mb-1"
-                        style="font-size: 10px"
-                        ><i class="fa fa-plus"></i
-                      ></a>
-                      <input
-                        type="text"
-                        class="quantity__input border-0 text-center fw-bold bg-transparent p-0"
-                        value="1"
-                        readonly
-                        style="width: 20px; font-size: 12px"
-                      />
-                      <a
-                        href="#"
-                        class="quantity__minus text-decoration-none text-dark px-1 mt-1"
-                        style="font-size: 10px"
-                        ><i class="fa fa-minus"></i
-                      ></a>
+                  <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light">
+                    <div class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm">
+                      <a href="#" class="quantity__plus text-decoration-none text-dark px-1 mb-1"
+                        style="font-size: 10px"><i class="fa fa-plus"></i></a>
+                      <input type="text" class="quantity__input border-0 text-center fw-bold bg-transparent p-0"
+                        value="1" readonly style="width: 20px; font-size: 12px" />
+                      <a href="#" class="quantity__minus text-decoration-none text-dark px-1 mt-1"
+                        style="font-size: 10px"><i class="fa fa-minus"></i></a>
                     </div>
                     <div class="product-img">
-                      <img
-                        src="images/product/1.png"
-                        alt="Bag"
-                        class="rounded"
-                        style="width: 60px; height: 60px; object-fit: cover"
-                      />
+                      <img src="images/product/1.png" alt="Bag" class="rounded"
+                        style="width: 60px; height: 60px; object-fit: cover" />
                     </div>
                     <div class="product-info flex-grow-1">
-                      <h6
-                        class="mb-0 fw-bold text-dark"
-                        style="font-size: 13px"
-                      >
+                      <h6 class="mb-0 fw-bold text-dark" style="font-size: 13px">
                         Commando Backpack (CD05)
                       </h6>
-                      <small class="text-muted d-block" style="font-size: 11px"
-                        >৳ 1599/ Per Item</small
-                      >
-                      <span class="fw-bold text-danger" style="font-size: 13px"
-                        >Total: ৳ 1599.00</span
-                      >
+                      <small class="text-muted d-block" style="font-size: 11px">৳ 1599/ Per Item</small>
+                      <span class="fw-bold text-danger" style="font-size: 13px">Total: ৳ 1599.00</span>
                     </div>
                     <div>
-                      <a href="#" class="text-danger opacity-50"
-                        ><i class="fa fa-trash-o fs-5"></i
-                      ></a>
+                      <a href="#" class="text-danger opacity-50"><i class="fa fa-trash-o fs-5"></i></a>
                     </div>
                   </div>
                 </div>
 
                 <div class="cart-footer mt-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-3"
-                  >
+                  <div class="d-flex justify-content-between align-items-center mb-3">
                     <span class="fw-bold text-muted">Subtotal:</span>
                     <span class="fw-bold text-danger fs-5">৳ 3098.00</span>
                   </div>
                   <div class="d-grid gap-2 d-flex">
-                    <a
-                      href="#"
-                      class="btn btn-outline-danger w-100 fw-bold py-2"
-                      style="font-size: 13px"
-                      >VIEW CART</a
-                    >
-                    <a
-                      href="#"
-                      class="btn btn-danger w-100 fw-bold py-2"
-                      style="font-size: 13px"
-                      >CHECKOUT</a
-                    >
+                    <a href="#" class="btn btn-outline-danger w-100 fw-bold py-2" style="font-size: 13px">VIEW CART</a>
+                    <a href="#" class="btn btn-danger w-100 fw-bold py-2" style="font-size: 13px">CHECKOUT</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div class="container d-lg-none">
+        <div class="row align-items-center">
+          <div class="col-3">
+            <div class="mobile_menu" data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+              aria-controls="mobileMenu">
+              <i class="fa fa-bars"></i>
+            </div>
+          </div>
+          <!-- mobile menu -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+              <div class="mobile-nav-wrapper shadow-sm border rounded">
+                <nav>
+                  <div class="nav nav-tabs nav-fill bg-light" id="nav-tab" role="tablist">
+                    <button class="nav-link active fw-bold py-3 text-uppercase" id="nav-category-tab"
+                      data-bs-toggle="tab" data-bs-target="#nav-category" type="button" role="tab">
+                      <i class="fa-solid fa-list-ul me-2"></i>Categories
+                    </button>
+                    <button class="nav-link fw-bold py-3 text-uppercase" id="nav-menu-tab" data-bs-toggle="tab"
+                      data-bs-target="#nav-menu" type="button" role="tab">
+                      <i class="fa-solid fa-bars me-2"></i>Menu
+                    </button>
+                  </div>
+                </nav>
 
-      <section class="bottom-header border-bottom py-1 header-sticky">
-        <div class="container d-none d-lg-block">
-          <div class="navbar-grid">
-            <div class="allCategory position-relative">
-              <i class="fa-solid fa-table-cells-large"></i>
-              All Categories
-              <div class="category-dropdown-wrapper shadow-sm">
-                <ul class="main-category-list list-unstyled mb-0">
-                  <li class="category-item">
-                    <a href="#" class="category-link">
-                      <span> Travel Bags</span>
-                      <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                    </a>
+                <div class="tab-content bg-white" id="nav-tabContent">
+                  <div class="tab-pane fade show active mobile-nav-wrapper" id="nav-category" role="tabpanel">
+                    <ul class="list-unstyled mb-0 category-list">
+                      <li class="category-item border-bottom">
+                        <div class="category-header d-flex justify-content-between align-items-center p-3"
+                          data-bs-toggle="collapse" data-bs-target="#sub-travel-1" aria-expanded="false"
+                          style="cursor: pointer">
+                          <span class="d-flex align-items-center fw-medium">
+                            <i class="fa-solid fa-person-walking-luggage me-3 text-danger fs-5"></i>
+                            Travel Bags
+                          </span>
+                          <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                        </div>
 
-                    <div class="subcategory-panel shadow-sm">
-                      <div class="sub-content">
-                        <h6 class="sub-title">Popular Travel Bags</h6>
-                        <ul class="list-unstyled">
-                          <li><a href="#">Bagpacks</a></li>
-                          <li><a href="#">New Arrival</a></li>
-                          <li><a href="#">Fashion Bagpacks</a></li>
-                          <li><a href="#">Official Bagpacks</a></li>
-                          <li><a href="">Travel Bags</a></li>
-                          <li><a href="">Cross Body</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="category-item">
-                    <a href="#" class="category-link">
-                      <span> Travel Bags</span>
-                      <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                    </a>
+                        <div class="collapse" id="sub-travel-1" data-bs-parent="#nav-category">
+                          <ul class="list-unstyled sub-category-list bg-light">
+                            <li>
+                              <a href="#" class="sub-link">Trolley Bags</a>
+                            </li>
+                            <li>
+                              <a href="#" class="sub-link">Backpacks</a>
+                            </li>
+                            <li>
+                              <a href="#" class="sub-link">Duffle Bags</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
 
-                    <div class="subcategory-panel shadow-sm">
-                      <div class="sub-content">
-                        <h6 class="sub-title">Popular Travel Bags</h6>
-                        <ul class="list-unstyled">
-                          <li><a href="#">Bagpacks</a></li>
-                          <li><a href="#">New Arrival</a></li>
-                          <li><a href="#">Fashion Bagpacks</a></li>
-                          <li><a href="#">Official Bagpacks</a></li>
-                          <li><a href="">Travel Bags</a></li>
-                          <li><a href="">Cross Body</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="category-item">
-                    <a href="#" class="category-link">
-                      <span> Travel Bags</span>
-                      <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                    </a>
+                      <li class="category-item border-bottom">
+                        <div class="category-header d-flex justify-content-between align-items-center p-3"
+                          data-bs-toggle="collapse" data-bs-target="#sub-office-2" aria-expanded="false"
+                          style="cursor: pointer">
+                          <span class="d-flex align-items-center fw-medium">
+                            <i class="fa-solid fa-briefcase me-3 text-danger fs-5"></i>
+                            Office Bags
+                          </span>
+                          <i class="fa-solid fa-chevron-down arrow-icon small text-muted"></i>
+                        </div>
 
-                    <div class="subcategory-panel shadow-sm">
-                      <div class="sub-content">
-                        <h6 class="sub-title">Popular Travel Bags</h6>
-                        <ul class="list-unstyled">
-                          <li><a href="#">Bagpacks</a></li>
-                          <li><a href="#">New Arrival</a></li>
-                          <li><a href="#">Fashion Bagpacks</a></li>
-                          <li><a href="#">Official Bagpacks</a></li>
-                          <li><a href="">Travel Bags</a></li>
-                          <li><a href="">Cross Body</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="category-item">
-                    <a href="#" class="category-link">
-                      <span> Travel Bags</span>
-                      <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                    </a>
+                        <div class="collapse" id="sub-office-2" data-bs-parent="#nav-category">
+                          <ul class="list-unstyled sub-category-list bg-light">
+                            <li>
+                              <a href="#" class="sub-link">Laptop Bags</a>
+                            </li>
+                            <li>
+                              <a href="#" class="sub-link">Messenger Bags</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
 
-                    <div class="subcategory-panel shadow-sm">
-                      <div class="sub-content">
-                        <h6 class="sub-title">Popular Travel Bags</h6>
-                        <ul class="list-unstyled">
-                          <li><a href="#">Bagpacks</a></li>
-                          <li><a href="#">New Arrival</a></li>
-                          <li><a href="#">Fashion Bagpacks</a></li>
-                          <li><a href="#">Official Bagpacks</a></li>
-                          <li><a href="">Travel Bags</a></li>
-                          <li><a href="">Cross Body</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="category-item">
-                    <a href="#" class="category-link">
-                      <span> Travel Bags</span>
-                      <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                    </a>
-
-                    <div class="subcategory-panel shadow-sm">
-                      <div class="sub-content">
-                        <h6 class="sub-title">Popular Travel Bags</h6>
-                        <ul class="list-unstyled">
-                          <li><a href="#">Bagpacks</a></li>
-                          <li><a href="#">New Arrival</a></li>
-                          <li><a href="#">Fashion Bagpacks</a></li>
-                          <li><a href="#">Official Bagpacks</a></li>
-                          <li><a href="">Travel Bags</a></li>
-                          <li><a href="">Cross Body</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                  <div class="tab-pane fade" id="nav-menu" role="tabpanel">
+                    <ul class="list-unstyled mb-0 main-menu-list">
+                      <li>
+                        <a href="#"><i class="fa-solid fa-house me-3"></i> Home</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa-solid fa-bolt me-3"></i> Campaigns</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa-solid fa-shop me-3"></i> Shop</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa-solid fa-envelope me-3"></i> Contact
+                          Us</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa-solid fa-circle-info me-3"></i> About
+                          Us</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <nav class="navbar">
-              <ul
-                class="d-flex justify-content-center align-items-center flex-wrap"
-              >
-                <li><a href="">Home</a></li>
-                <li><a href="">Campaigns</a></li>
-                <li><a href="">Bagpacks</a></li>
-                <li><a href="">New Arrival</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="container d-lg-none">
-          <form action="" method="post">
-            <div class="from-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search for products, brands and more"
-                aria-label="Search"
-              />
-            </div>
-          </form>
-        </div>
-      </section>
-    </header>
-
-    <div class="ez-breadcrumb-wrapper py-3 bg-light border-bottom">
-      <div class="container">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item">
-              <a href="#" class="text-decoration-none text-muted">
-                <i class="fa-solid fa-house-chimney me-1"></i> Home
-              </a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#" class="text-decoration-none text-muted">Cart</a>
-            </li>
-            <li
-              class="breadcrumb-item active fw-bold text-danger"
-              aria-current="page"
-            >
-              Cart
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-
-    <main>
-     <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-7">
-                <div class="card register-card p-5">
-                    
-                    <div class="text-center mb-5">
-                        <h2>Classic IT</h2>
-                        <p class="text-muted">Register for your Multipurpose HTML Template account.</p>
-                    </div>
-
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingName" placeholder="John Doe">
-                                    <label for="floatingName">Full Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingUsername" placeholder="johndoe">
-                                    <label for="floatingUsername">Username</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4 form-floating">
-                            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-                            <label for="floatingEmail">Email address</label>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                    <label for="floatingPassword">Password</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
-                                    <label for="floatingConfirmPassword">Confirm Password</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-check mb-5">
-                            <input class="form-check-input" type="checkbox" id="termsConditions">
-                            <label class="form-check-label text-muted" for="termsConditions">
-                                I agree to the <a href="#">Terms and Conditions</a>
-                            </label>
-                        </div>
-
-                        <div class="d-grid gap-2 col-md-8 mx-auto">
-                            <button class="btn btn-primary btn-lg" type="submit">Sign Up</button>
-                        </div>
-
-                        <p class="text-center mt-5 text-muted">
-                            Already have an account? <a href="login.html">Log In</a>
-                        </p>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    </main>
-
-    <footer
-      class="footer-section pt-5 pb-3"
-      style="background-color: #fff9f9; border-top: 1px solid #f2e1e1"
-    >
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-logo mb-3">
-              <img
-                src="images/logo.webp"
-                alt="Classic IT"
-                class="img-fluid"
-                style="max-height: 50px"
-              />
-            </div>
-            <p class="text-muted small lh-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque tristique mauris ac luctus placerat. Aenean egestas
-              nulla vulputate facilisis commodo.
-            </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 ps-lg-5">
-            <h6 class="fw-bold mb-4 footer-title">Useful Links</h6>
-            <ul class="list-unstyled footer-links">
-              <li><a href="#" class="active">About us</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">Return Policy</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
+          <div class="col-6 text-center">
+            <a href="index.html"><img src="images/logo.webp" alt="Classic IT" class="img-fluid" /></a>
           </div>
 
-          <div class="col-lg-4 col-md-6 ps-lg-4">
-            <h6 class="fw-bold mb-4 footer-title">Support</h6>
-            <div class="d-flex mb-3">
-              <i class="fas fa-map-marker-alt text-danger me-3 mt-1"></i>
-              <p class="small text-muted mb-0">Dhaka, Bangladesh</p>
-            </div>
-            <div class="d-flex mb-3">
-              <i class="fas fa-envelope text-danger me-3 mt-1"></i>
-              <a
-                href="mailto:najmulcse247@gmail.com"
-                class="small text-muted mb-0"
-                >najmulcse247@gmail.com</a
-              >
-            </div>
-            <div class="d-flex mb-3">
-              <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
-              <a href="tel:+88011403714757" class="small text-muted mb-0"
-                >+88011403714757</a
-              >
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 text-md-end text-lg-start">
-            <h6 class="fw-bold mb-4 footer-title">Stay in touch</h6>
-            <div class="social-icons mb-4">
-              <a href="#" class="me-2 text-decoration-none"
-                ><i class="fab fa-facebook fa-lg" style="color: #1877f2"></i
-              ></a>
-              <a href="#" class="me-2 text-decoration-none"
-                ><i class="fab fa-twitter fa-lg" style="color: #1da1f2"></i
-              ></a>
-              <a href="#" class="me-2 text-decoration-none"
-                ><i class="fab fa-youtube fa-lg" style="color: #ff0000"></i
-              ></a>
-              <a href="#" class="me-2 text-decoration-none"
-                ><i class="fab fa-linkedin fa-lg" style="color: #0a66c2"></i
-              ></a>
-              <a href="#" class="me-2 text-decoration-none"
-                ><i class="fab fa-instagram fa-lg" style="color: #c13584"></i
-              ></a>
-            </div>
-            <div class="payment-methods">
-              <img
-                src="https://i.ibb.co/Vv9tmkv/mastercard.png"
-                alt="Mastercard"
-                class="me-2 mb-2"
-                style="height: 30px"
-              />
-              <img
-                src="https://i.ibb.co/6nd8XvS/visa.png"
-                alt="Visa"
-                class="me-2 mb-2"
-                style="height: 30px"
-              />
-              <img
-                src="https://i.ibb.co/Hq8T6v6/bkash.png"
-                alt="bKash"
-                class="mb-2"
-                style="height: 30px; border-radius: 4px"
-              />
-            </div>
-          </div>
-        </div>
-
-        <hr class="mt-5 mb-4 text-muted opacity-25" />
-        <div class="row align-items-center pb-2">
-          <div class="col-md-6 text-center text-md-start">
-            <p class="small text-muted mb-0">
-              © 2026 All rights reserved byClassic IT
-            </p>
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <p class="small text-muted mb-0">
-              Developed by
-              <span class="fw-bold">
-                <a href="" target="_blank">Classic IT</a>
+          <div class="col-3 text-center">
+            <a class="text-decoration-none text-muted position-relative" data-bs-toggle="offcanvas"
+              href="#cartOffcanvas" role="button" aria-controls="cartOffcanvas">
+              <i class="fas fa-shopping-cart fa-lg"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                3
               </span>
-            </p>
+            </a>
+          </div>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title fw-bold" id="cartOffcanvasLabel">
+                Your Shopping Bag
+              </h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <h6 class="border-bottom pb-2 mb-3 fw-bold text-muted">
+                There are 3 Items in your bag
+              </h6>
+
+              <div class="cart-items-list mobile_cart">
+                <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light">
+                  <div class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm">
+                    <a href="#" class="quantity__plus text-decoration-none text-dark px-1 mb-1"
+                      style="font-size: 10px; line-height: 1"><i class="fa fa-plus"></i></a>
+                    <input type="text" class="quantity__input border-0 text-center fw-bold bg-transparent p-0" value="1"
+                      readonly style="width: 20px; font-size: 12px" />
+                    <a href="#" class="quantity__minus text-decoration-none text-dark px-1 mt-1"
+                      style="font-size: 10px; line-height: 1"><i class="fa fa-minus"></i></a>
+                  </div>
+                  <div class="product-img">
+                    <img src="images/product/1.png" alt="Bag" class="rounded"
+                      style="width: 60px; height: 60px; object-fit: cover" />
+                  </div>
+                  <div class="product-info flex-grow-1">
+                    <h6 class="mb-0 fw-bold text-dark" style="font-size: 13px">
+                      Commando Backpack (CDB01)
+                    </h6>
+                    <small class="text-muted d-block" style="font-size: 11px">৳ 1499/ Per Item</small>
+                    <span class="fw-bold text-danger" style="font-size: 13px">Total: ৳ 1499.00</span>
+                  </div>
+                  <div>
+                    <a href="#" class="text-danger opacity-50"><i class="fa fa-trash-o fs-5"></i></a>
+                  </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-light">
+                  <div class="quantity d-flex flex-column align-items-center border rounded p-1 bg-white shadow-sm">
+                    <a href="#" class="quantity__plus text-decoration-none text-dark px-1 mb-1"
+                      style="font-size: 10px"><i class="fa fa-plus"></i></a>
+                    <input type="text" class="quantity__input border-0 text-center fw-bold bg-transparent p-0" value="1"
+                      readonly style="width: 20px; font-size: 12px" />
+                    <a href="#" class="quantity__minus text-decoration-none text-dark px-1 mt-1"
+                      style="font-size: 10px"><i class="fa fa-minus"></i></a>
+                  </div>
+                  <div class="product-img">
+                    <img src="images/product/1.png" alt="Bag" class="rounded"
+                      style="width: 60px; height: 60px; object-fit: cover" />
+                  </div>
+                  <div class="product-info flex-grow-1">
+                    <h6 class="mb-0 fw-bold text-dark" style="font-size: 13px">
+                      Commando Backpack (CD05)
+                    </h6>
+                    <small class="text-muted d-block" style="font-size: 11px">৳ 1599/ Per Item</small>
+                    <span class="fw-bold text-danger" style="font-size: 13px">Total: ৳ 1599.00</span>
+                  </div>
+                  <div>
+                    <a href="#" class="text-danger opacity-50"><i class="fa fa-trash-o fs-5"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart-footer mt-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="fw-bold text-muted">Subtotal:</span>
+                  <span class="fw-bold text-danger fs-5">৳ 3098.00</span>
+                </div>
+                <div class="d-grid gap-2 d-flex">
+                  <a href="#" class="btn btn-outline-danger w-100 fw-bold py-2" style="font-size: 13px">VIEW CART</a>
+                  <a href="#" class="btn btn-danger w-100 fw-bold py-2" style="font-size: 13px">CHECKOUT</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    <script type="text/javascript">
-      (function () {
-        var options = {
-          whatsapp: "+8801403714757",
-          facebook: "YOUR_FACEBOOK_PAGE_ID",
-          call_to_action: "Message us",
-          button_color: "#FF6550",
-          position: "right",
-          order: "whatsapp,facebook",
-        };
-        var proto = "https:",
-          host = "getbutton.io",
-          url = proto + "//static." + host;
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = url + "/widget-send-button/js/init.js";
-        s.onload = function () {
-          WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName("script")[0];
-        x.parentNode.insertBefore(s, x);
-      })();
+    </section>
 
-      setTimeout(() => {
-        try {
-          var x = document.querySelector("a[href*='getbutton.io']");
-          if (x) x.remove();
-        } catch (e) {}
-      }, 2000);
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <section class="bottom-header border-bottom py-1 header-sticky">
+      <div class="container d-none d-lg-block">
+        <div class="navbar-grid">
+          <div class="allCategory position-relative">
+            <i class="fa-solid fa-table-cells-large"></i>
+            All Categories
+            <div class="category-dropdown-wrapper shadow-sm">
+              <ul class="main-category-list list-unstyled mb-0">
+                <li class="category-item">
+                  <a href="#" class="category-link">
+                    <span> Travel Bags</span>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                  </a>
+
+                  <div class="subcategory-panel shadow-sm">
+                    <div class="sub-content">
+                      <h6 class="sub-title">Popular Travel Bags</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Bagpacks</a></li>
+                        <li><a href="#">New Arrival</a></li>
+                        <li><a href="#">Fashion Bagpacks</a></li>
+                        <li><a href="#">Official Bagpacks</a></li>
+                        <li><a href="">Travel Bags</a></li>
+                        <li><a href="">Cross Body</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link">
+                    <span> Travel Bags</span>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                  </a>
+
+                  <div class="subcategory-panel shadow-sm">
+                    <div class="sub-content">
+                      <h6 class="sub-title">Popular Travel Bags</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Bagpacks</a></li>
+                        <li><a href="#">New Arrival</a></li>
+                        <li><a href="#">Fashion Bagpacks</a></li>
+                        <li><a href="#">Official Bagpacks</a></li>
+                        <li><a href="">Travel Bags</a></li>
+                        <li><a href="">Cross Body</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link">
+                    <span> Travel Bags</span>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                  </a>
+
+                  <div class="subcategory-panel shadow-sm">
+                    <div class="sub-content">
+                      <h6 class="sub-title">Popular Travel Bags</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Bagpacks</a></li>
+                        <li><a href="#">New Arrival</a></li>
+                        <li><a href="#">Fashion Bagpacks</a></li>
+                        <li><a href="#">Official Bagpacks</a></li>
+                        <li><a href="">Travel Bags</a></li>
+                        <li><a href="">Cross Body</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link">
+                    <span> Travel Bags</span>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                  </a>
+
+                  <div class="subcategory-panel shadow-sm">
+                    <div class="sub-content">
+                      <h6 class="sub-title">Popular Travel Bags</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Bagpacks</a></li>
+                        <li><a href="#">New Arrival</a></li>
+                        <li><a href="#">Fashion Bagpacks</a></li>
+                        <li><a href="#">Official Bagpacks</a></li>
+                        <li><a href="">Travel Bags</a></li>
+                        <li><a href="">Cross Body</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="category-item">
+                  <a href="#" class="category-link">
+                    <span> Travel Bags</span>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                  </a>
+
+                  <div class="subcategory-panel shadow-sm">
+                    <div class="sub-content">
+                      <h6 class="sub-title">Popular Travel Bags</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Bagpacks</a></li>
+                        <li><a href="#">New Arrival</a></li>
+                        <li><a href="#">Fashion Bagpacks</a></li>
+                        <li><a href="#">Official Bagpacks</a></li>
+                        <li><a href="">Travel Bags</a></li>
+                        <li><a href="">Cross Body</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <nav class="navbar">
+            <ul class="d-flex justify-content-center align-items-center flex-wrap">
+              <li><a href="">Home</a></li>
+              <li><a href="">Campaigns</a></li>
+              <li><a href="">Bagpacks</a></li>
+              <li><a href="">New Arrival</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="container d-lg-none">
+        <form action="" method="post">
+          <div class="from-group">
+            <input type="text" class="form-control" placeholder="Search for products, brands and more"
+              aria-label="Search" />
+          </div>
+        </form>
+      </div>
+    </section>
+  </header>
+
+  <div class="ez-breadcrumb-wrapper py-3 bg-light border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-decoration-none text-muted">
+              <i class="fa-solid fa-house-chimney me-1"></i> Home
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#" class="text-decoration-none text-muted">Cart</a>
+          </li>
+          <li class="breadcrumb-item active fw-bold text-danger" aria-current="page">
+            Cart
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-7">
+          <div class="card register-card p-5">
+
+            <div class="text-center mb-5">
+              <h2>Classic IT</h2>
+              <p class="text-muted">Register for your Multipurpose HTML Template account.</p>
+            </div>
+
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingName" placeholder="John Doe">
+                    <label for="floatingName">Full Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingUsername" placeholder="johndoe">
+                    <label for="floatingUsername">Username</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4 form-floating">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                <label for="floatingEmail">Email address</label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingConfirmPassword"
+                      placeholder="Confirm Password">
+                    <label for="floatingConfirmPassword">Confirm Password</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check mb-5">
+                <input class="form-check-input" type="checkbox" id="termsConditions">
+                <label class="form-check-label text-muted" for="termsConditions">
+                  I agree to the <a href="#">Terms and Conditions</a>
+                </label>
+              </div>
+
+              <div class="d-grid gap-2 col-md-8 mx-auto">
+                <button class="btn btn-primary btn-lg" type="submit">Sign Up</button>
+              </div>
+
+              <p class="text-center mt-5 text-muted">
+                Already have an account? <a href="login.html">Log In</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-section pt-5 pb-3" style="background-color: #fff9f9; border-top: 1px solid #f2e1e1">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-logo mb-3">
+            <img src="images/logo.webp" alt="Classic IT" class="img-fluid" style="max-height: 50px" />
+          </div>
+          <p class="text-muted small lh-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque tristique mauris ac luctus placerat. Aenean egestas
+            nulla vulputate facilisis commodo.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6 ps-lg-5">
+          <h6 class="fw-bold mb-4 footer-title">Useful Links</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#" class="active">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 ps-lg-4">
+          <h6 class="fw-bold mb-4 footer-title">Support</h6>
+          <div class="d-flex mb-3">
+            <i class="fas fa-map-marker-alt text-danger me-3 mt-1"></i>
+            <p class="small text-muted mb-0">Dhaka, Bangladesh</p>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="fas fa-envelope text-danger me-3 mt-1"></i>
+            <a href="mailto:najmulcse247@gmail.com" class="small text-muted mb-0">najmulcse247@gmail.com</a>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
+            <a href="tel:+88011403714757" class="small text-muted mb-0">+88011403714757</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 text-md-end text-lg-start">
+          <h6 class="fw-bold mb-4 footer-title">Stay in touch</h6>
+          <div class="social-icons mb-4">
+            <a href="#" class="me-2 text-decoration-none"><i class="fab fa-facebook fa-lg"
+                style="color: #1877f2"></i></a>
+            <a href="#" class="me-2 text-decoration-none"><i class="fab fa-twitter fa-lg"
+                style="color: #1da1f2"></i></a>
+            <a href="#" class="me-2 text-decoration-none"><i class="fab fa-youtube fa-lg"
+                style="color: #ff0000"></i></a>
+            <a href="#" class="me-2 text-decoration-none"><i class="fab fa-linkedin fa-lg"
+                style="color: #0a66c2"></i></a>
+            <a href="#" class="me-2 text-decoration-none"><i class="fab fa-instagram fa-lg"
+                style="color: #c13584"></i></a>
+          </div>
+          <div class="payment-methods">
+            <img src="https://i.ibb.co/Vv9tmkv/mastercard.png" alt="Mastercard" class="me-2 mb-2"
+              style="height: 30px" />
+            <img src="https://i.ibb.co/6nd8XvS/visa.png" alt="Visa" class="me-2 mb-2" style="height: 30px" />
+            <img src="https://i.ibb.co/Hq8T6v6/bkash.png" alt="bKash" class="mb-2"
+              style="height: 30px; border-radius: 4px" />
+          </div>
+        </div>
+      </div>
+
+      <hr class="mt-5 mb-4 text-muted opacity-25" />
+      <div class="row align-items-center pb-2">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="small text-muted mb-0">
+            © 2026 All rights reserved byClassic IT
+          </p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="small text-muted mb-0">
+            Developed by
+            <span class="fw-bold">
+              <a href="" target="_blank">Classic IT</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    (function () {
+      var options = {
+        whatsapp: "+8801403714757",
+        facebook: "YOUR_FACEBOOK_PAGE_ID",
+        call_to_action: "Message us",
+        button_color: "#FF6550",
+        position: "right",
+        order: "whatsapp,facebook",
+      };
+      var proto = "https:",
+        host = "getbutton.io",
+        url = proto + "//static." + host;
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = url + "/widget-send-button/js/init.js";
+      s.onload = function () {
+        WhWidgetSendButton.init(host, proto, options);
+      };
+      var x = document.getElementsByTagName("script")[0];
+      x.parentNode.insertBefore(s, x);
+    })();
+
+    setTimeout(() => {
+      try {
+        var x = document.querySelector("a[href*='getbutton.io']");
+        if (x) x.remove();
+      } catch (e) { }
+    }, 2000);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
