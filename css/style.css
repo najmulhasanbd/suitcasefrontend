@@ -571,7 +571,7 @@ textarea {
 .buy-now-btn {
   background-color: transparent !important;
   color: var(--primary-color) !important;
-  border: 2px solid var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
   border-radius: 8px;
   position: relative;
   overflow: hidden;

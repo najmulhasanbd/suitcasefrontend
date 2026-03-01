@@ -199,10 +199,57 @@
     .dashboard-area .invoice-section {
         margin-top: 0;
     }
+
     .dashboard-area .custom-order-table td {
-	padding: 5px;
-	padding-bottom: 0;
-}
+        padding: 5px;
+        padding-bottom: 0;
+    }
+
+    .feature-category .owl-nav {
+        display: none;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .section-title {
+        margin-bottom: 10px;
+    }
+
+    .feature-category.py-5,
+    .backpack-area.arrival-area.py-5,
+    .arrival-area.py-5 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .arrival-area.pt-5 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .btn.buy-now-btn {
+        line-height: 1;
+    }
+
+    .arrival-area.pb-5 {
+        padding-bottom: 1rem !important;
+    }
+
+    .footer-section {
+        margin-top: 0 !important;
+        padding-top: 20px !important;
+    }
+
+    .footer-section hr {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .dashboard-area .single-panel h5 {
+        font-size: 15px;
+    }
 }
 
 /* Large Mobile :480px. */

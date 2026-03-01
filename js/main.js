@@ -45,7 +45,7 @@
             '<i class="fa-solid fa-chevron-right"></i>'
         ],
         nav: true,
-        dots: true,
+        dots: false,
         autoplay: true,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
