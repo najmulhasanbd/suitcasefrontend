@@ -23,6 +23,119 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+<style>
+        /* * 1. Theme Variables
+         * CSS variables defined by the user
+         */
+        :root {
+            --primary-color: #004D2B;
+            --secondary-color: #7dba2f;
+            --success-color: #7dba2f;
+            --dark-color: #020101;
+            --family: "Roboto", sans-serif;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Fixed Light Mode Only */
+            --body-bg: #ffffff;
+            --text-main: #7e7e7e;
+            --text-heading: #4a4a4a;
+            --border-color: #eeeeee;
+            --card-bg: #f8f9fa;
+        }
+
+        /* * 2. Global Styles
+         * Applying variables to the overall page
+         */
+        body {
+            font-family: var(--family);
+            background-color: var(--body-bg);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6, .card-title {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        /* * 3. Utility Classes & Customizations
+         * Styling elements to match the theme
+         */
+        
+        /* Modern, centered card with a slight shadow */
+        .register-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--body-bg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .register-card:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input fields: minimal, bottom line only, theme colors */
+        .form-control {
+            border: none;
+            border-bottom: 2px solid var(--border-color);
+            border-radius: 0;
+            color: var(--dark-color);
+            font-size: 1rem;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            color: var(--dark-color);
+            background-color: transparent;
+            border-color: var(--primary-color);
+            outline: 0;
+            box-shadow: none;
+        }
+
+        .form-label {
+            color: var(--text-main);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Input field floating labels (optional) */
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+          color: var(--primary-color);
+          opacity: 1;
+        }
+
+        /* Modern, solid color primary button */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        /* Links using the primary color */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+    </style>
   </head>
 
   <body>
@@ -879,35 +992,72 @@
     </div>
 
     <main>
-      <section class="dashboard-area container">
-        <div class="sidebar">
-          <ul>
-            <li><a href="deshboard.html" class="active">Dashboard</a></li>
-            <li><a href="order.html">Orders</a></li>
-            <li><a href="track-order.html">Track Orders</a></li>
-            <li><a href="address.html">Address</a></li>
-            <li><a href="account-details.html">Account Details</a></li>
-            <li><a href="#">Logout</a></li>
-          </ul>
-        </div>
+     <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-7">
+                <div class="card register-card p-5">
+                    
+                    <div class="text-center mb-5">
+                        <h2>Classic IT</h2>
+                        <p class="text-muted">Register for your Multipurpose HTML Template account.</p>
+                    </div>
 
-        <div class="main-dashboard">
-          <h3>Billing Address</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingName" placeholder="John Doe">
+                                    <label for="floatingName">Full Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingUsername" placeholder="johndoe">
+                                    <label for="floatingUsername">Username</label>
+                                </div>
+                            </div>
+                        </div>
 
-          <form action="" method="POST" class="address-form">
-            <div class="address-container">
-              <textarea
-                name="address"
-                id="address"
-                placeholder="Write your address"
-              ></textarea>
-              <div class="button-wrapper">
-                <button type="submit" class="btn-update">Update</button>
-              </div>
+                        <div class="mb-4 form-floating">
+                            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                            <label for="floatingEmail">Email address</label>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+                                    <label for="floatingConfirmPassword">Confirm Password</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-check mb-5">
+                            <input class="form-check-input" type="checkbox" id="termsConditions">
+                            <label class="form-check-label text-muted" for="termsConditions">
+                                I agree to the <a href="#">Terms and Conditions</a>
+                            </label>
+                        </div>
+
+                        <div class="d-grid gap-2 col-md-8 mx-auto">
+                            <button class="btn btn-primary btn-lg" type="submit">Sign Up</button>
+                        </div>
+
+                        <p class="text-center mt-5 text-muted">
+                            Already have an account? <a href="login.html">Log In</a>
+                        </p>
+                    </form>
+
+                </div>
             </div>
-          </form>
         </div>
-      </section>
+    </div>
     </main>
 
     <footer

@@ -1,5 +1,5 @@
 /*
-  Theme Name: Suitcase BD - Multipurpose HTML Template
+  Theme Name:Classic IT - Multipurpose HTML Template
   Author: najmulcse247@gmail.com
 */
 
@@ -21,7 +21,7 @@
 }
 
 :root {
-  --primary-color: #800020;
+  --primary-color: #004D2B;
   --secondary-color: #7dba2f;
   --success-color: #7dba2f;
   --dark-color: #020101;
@@ -294,7 +294,7 @@ textarea {
 
 .allCategory {
   cursor: pointer;
-  background: var(--secondary-color);
+  background: var(--primary-color);
   color: #fff;
   padding: 5px 25px;
   /* border-radius: 5px 5px 0 0; */
@@ -341,7 +341,7 @@ textarea {
 
 .category-item:hover>.category-link {
   background: #fff5ed;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   padding-left: 25px;
 }
 
@@ -357,7 +357,7 @@ textarea {
   width: 260px;
   min-height: 100%;
   background: #fff;
-  border-left: 3px solid var(--secondary-color);
+  border-left: 3px solid var(--primary-color);
   opacity: 0;
   visibility: hidden;
   transform: translateX(20px);
@@ -376,7 +376,7 @@ textarea {
   font-size: 15px;
   font-weight: 700;
   padding: 0 20px 10px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   border-bottom: 1px solid #eee;
   margin-bottom: 10px;
 }
@@ -392,7 +392,7 @@ textarea {
 
 .subcategory-panel ul li a:hover {
   background: #fcfcfc;
-  color: #b9752d;
+  color: var(--primary-color);
   padding-left: 30px;
 }
 
@@ -409,6 +409,9 @@ textarea {
   background-color: #d9b3bd61;
 }
 
+.single-product span:first-child {
+  color: var(--primary-color) !important;
+}
 /* mobile menu */
 .mobile-nav-wrapper {
   overflow: hidden;
@@ -956,7 +959,7 @@ textarea {
 }
 
 .price-filter-btn {
-  background-color: var(--main-color, #472786);
+  background-color: var(--primary-color);
   color: white !important;
   font-weight: 600;
   font-size: 14px;
@@ -1124,7 +1127,7 @@ textarea {
   bottom: 30px;
   height: 35px;
   width: 35px;
-  background: var(--success-color);
+  background: var(--primary-color);
   color: #fff;
   text-align: center;
   border-radius: 50%;
