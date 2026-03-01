@@ -19,7 +19,7 @@
 
 <body>
 
-     <header>
+    <header>
         <section class="top-bar border-bottom  py-2">
             <div class="container">
                 <div class="row align-items-center">
@@ -571,9 +571,6 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Search">
                         </div>
-                        <button class="filter-btn">
-                            <i class="fa-solid fa-filter"></i> Filter
-                        </button>
                     </div>
 
                     <div class="table-responsive">
@@ -584,32 +581,38 @@
                                     <th>Date <i class="fa-solid fa-sort"></i></th>
                                     <th>Amount <i class="fa-solid fa-sort"></i></th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>#012345</td>
+                                    <td class="d-flex justify-content-between">#012345 <span class="d-md-none"><a
+                                                href="order-details.html" class="view-btn"><i
+                                                    class="fa-regular fa-eye"></i></a></span></td>
                                     <td>12/02/2026</td>
                                     <td>1000 Tk</td>
                                     <td><span class="status-badge in-transit">In Transit</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
+                                    <td class="d-none d-md-block text-center"><a href="order-details.html" class="view-btn"><i
                                                 class="fa-regular fa-eye"></i></a></td>
                                 </tr>
                                 <tr>
-                                    <td>#012345</td>
+                                    <td class="d-flex justify-content-between">#012345 <span class="d-md-none"><a
+                                                href="order-details.html" class="view-btn"><i
+                                                    class="fa-regular fa-eye"></i></a></span></td>
                                     <td>12/02/2026</td>
                                     <td>1000 Tk</td>
                                     <td><span class="status-badge processing">Processing</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
+                                    <td class="d-none d-md-block text-center"><a href="order-details.html" class="view-btn"><i
                                                 class="fa-regular fa-eye"></i></a></td>
                                 </tr>
                                 <tr>
-                                    <td>#012345</td>
+                                    <td class="d-flex justify-content-between">#012345 <span class="d-md-none"><a
+                                                href="order-details.html" class="view-btn"><i
+                                                    class="fa-regular fa-eye"></i></a></span></td>
                                     <td>12/02/2026</td>
                                     <td>1000 Tk</td>
                                     <td><span class="status-badge delivered">Delivered</span></td>
-                                    <td><a href="order-details.html" class="view-btn"><i
+                                    <td class="d-none d-md-block text-center"><a href="order-details.html" class="view-btn"><i
                                                 class="fa-regular fa-eye"></i></a></td>
                                 </tr>
                             </tbody>
